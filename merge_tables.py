@@ -18,11 +18,20 @@ df_re.columns
 df_de.columns
 
 
+df_country_map_names = pd.DataFrame(
+{ 'country_region'    : ['US'                      ,'Congo (Brazzaville)', 'Congo (Kinshasa)','Burma'  ,"Cote d'Ivoire", 'South Sudan', 'Central African Republic','Korea, South']
+, 'country_region_map': ['United States of America','Congo'              , 'Dem. Rep. Congo' ,'Myanmar',"Côte d'Ivoire", 'S. Sudan'   , 'Central African Rep.'    ,'South Korea' ]  
+})
+
 df_lu_clean = df_lu.assign(
       province_state  = lambda x: x['Province_State'].fillna('')
     , country_region  = lambda x: x['Country_Region']
     , lu_id           = lambda x: range(x.shape[0])
-).drop(columns = ['Province_State', 'Country_Region'])
+).drop(columns = ['Province_State', 'Country_Region']).merge(
+    df_country_map_names, how = 'outer', on = ['country_region']
+).assign(
+    country_region_map = lambda x: x.country_region_map.fillna(x.country_region)
+)
 
 id_vars = ['Province/State', 'Country/Region', 'Lat', 'Long']
 
@@ -66,10 +75,11 @@ df_data_clean = df_lu_clean.merge(
     ,   lag_7_recovered = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'].shift(7).fillna(0)
     ,   lag_7_deaths    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'   ].shift(7).fillna(0)
     ,   lag_7_active    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'   ].shift(7).fillna(0)
+    ).query('''confirmed > 0 or recovered > 0 or deaths > 0 or active> 0'''
     )
 
-df_lu_clean.to_csv("df_lu_clean.tsv", index = False, sep = '\t')
-df_data_clean.to_csv("df_data_clean.tsv", index = False, sep = '\t')
+df_lu_clean.to_csv("df_lu_clean.tsv", index = False, sep = '\t', encoding='utf-8-sig')
+df_data_clean.to_csv("df_data_clean.tsv", index = False, sep = '\t' ,encoding='utf-8-sig')
 
 def power_bi_type_cast(df):
     type_string = '= Table.TransformColumnTypes(#"Promoted Headers",\n{   \n'
