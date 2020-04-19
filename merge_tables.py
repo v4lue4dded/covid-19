@@ -12,6 +12,10 @@ df_co  = pd.read_csv(data_path+ 'csse_covid_19_time_series//time_series_covid19_
 df_re  = pd.read_csv(data_path+ 'csse_covid_19_time_series//time_series_covid19_recovered_global.csv')
 df_de  = pd.read_csv(data_path+ 'csse_covid_19_time_series//time_series_covid19_deaths_global.csv')
 
+df_europe  = pd.read_csv(os.getcwd() + '//european_countries.tsv', sep='\t')
+
+
+
 df_lu.columns
 df_co.columns
 df_re.columns
@@ -29,8 +33,11 @@ df_lu_clean = df_lu.assign(
     , lu_id           = lambda x: range(x.shape[0])
 ).drop(columns = ['Province_State', 'Country_Region']).merge(
     df_country_map_names, how = 'outer', on = ['country_region']
+).merge(
+    df_europe, how = 'outer', on = ['iso2']
 ).assign(
     country_region_map = lambda x: x.country_region_map.fillna(x.country_region)
+    , country_group = lambda x: x.country_group.fillna('')
 )
 
 id_vars = ['Province/State', 'Country/Region', 'Lat', 'Long']
@@ -122,11 +129,16 @@ print(power_bi_type_cast(df_lu_clean))
 print(power_bi_type_cast(df_data_clean))
 
 
-# daily growth confirmed prev day  = (SUM('data_at'[confirmed]) / SUM('data_at'[lag_1_confirmed])) -1
-# daily growth recovered prev day  = (SUM('data_at'[recovered]) / SUM('data_at'[lag_1_recovered])) -1
-# daily growth deaths prev day     = (SUM('data_at'[deaths]   ) / SUM('data_at'[lag_1_deaths]   )) -1
-# daily growth active prev day     = (SUM('data_at'[active]   ) / SUM('data_at'[lag_1_active]   )) -1
-# daily growth confirmed prev week = DIVIDE(SUM('data_at'[confirmed]   ), SUM('data_at'[lag_7_confirmed]   ))^(1/7) -1
-# daily growth recovered prev week = DIVIDE(SUM('data_at'[recovered]   ), SUM('data_at'[lag_7_recovered]   ))^(1/7) -1
-# daily growth deaths prev week = DIVIDE(SUM('data_at'[deaths]   ), SUM('data_at'[lag_7_deaths]   ))^(1/7) -1
-# daily growth active prev week = DIVIDE(SUM('data_at'[active]   ), SUM('data_at'[lag_7_active]   ))^(1/7) -1
+daily growth confirmed prev day    = DIVIDE(SUM('data_at'[confirmed]), SUM('data_at'[lag_1_confirmed]))       -1
+daily growth recovered prev day    = DIVIDE(SUM('data_at'[recovered]), SUM('data_at'[lag_1_recovered]))       -1
+daily growth deaths prev day       = DIVIDE(SUM('data_at'[deaths]   ), SUM('data_at'[lag_1_deaths]   ))       -1
+daily growth active prev day       = DIVIDE(SUM('data_at'[active]   ), SUM('data_at'[lag_1_active]   ))       -1
+
+hist daily growth confirmed prev day    = DIVIDE(SUM('data_ot'[confirmed]), SUM('data_ot'[lag_1_confirmed]))       -1
+hist daily growth recovered prev day    = DIVIDE(SUM('data_ot'[recovered]), SUM('data_ot'[lag_1_recovered]))       -1
+hist daily growth deaths prev day       = DIVIDE(SUM('data_ot'[deaths]   ), SUM('data_ot'[lag_1_deaths]   ))       -1
+hist daily growth active prev day       = DIVIDE(SUM('data_ot'[active]   ), SUM('data_ot'[lag_1_active]   ))       -1
+hist daily growth confirmed prev week   = DIVIDE(SUM('data_ot'[confirmed]), SUM('data_ot'[lag_7_confirmed]))^(1/7) -1
+hist daily growth recovered prev week   = DIVIDE(SUM('data_ot'[recovered]), SUM('data_ot'[lag_7_recovered]))^(1/7) -1
+hist daily growth deaths prev week      = DIVIDE(SUM('data_ot'[deaths]   ), SUM('data_ot'[lag_7_deaths]   ))^(1/7) -1
+hist daily growth active prev week      = DIVIDE(SUM('data_ot'[active]   ), SUM('data_ot'[lag_7_active]   ))^(1/7) -1
