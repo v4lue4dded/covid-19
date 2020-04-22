@@ -4,6 +4,9 @@ import sys as sys
 import os as os
 import datetime as dt
 
+pd.set_option('display.max_rows', 1000)
+pd.set_option('display.max_columns', 50)
+
 data_path = os.getcwd() + '\\COVID-19\\csse_covid_19_data\\'
 print(data_path)
 
@@ -137,8 +140,11 @@ df_data_clean = df_co_clean.merge(
     ).query('''confirmed > 0 or recovered > 0 or deaths > 0 or tested > 0 or active> 0'''
     )
 
+max_date = max(df_data_clean.date)
+
 df_lu_clean.to_csv("df_lu_clean.tsv", index = False, sep = '\t', encoding='utf-8-sig')
 df_data_clean.to_csv("df_data_clean.tsv", index = False, sep = '\t' ,encoding='utf-8-sig')
+df_data_clean.query("date == @max_date").to_csv("df_data_clean_max_date.tsv", index = False, sep = '\t' ,encoding='utf-8-sig')
 
 def power_bi_type_cast(df):
     type_string = '= Table.TransformColumnTypes(#"Promoted Headers",\n{   \n'
@@ -180,6 +186,46 @@ def power_bi_type_cast(df):
 print(power_bi_type_cast(df_lu_clean))
 print(power_bi_type_cast(df_data_clean))
 
+df_te_clean_estimated = df_te_clean.assign(
+       tested_or_nan                        = lambda x: x.tested.replace(0, np.nan)
+     , tested_or_nan_log                    = lambda x: np.log(x.tested.replace(0, np.nan))
+     , tested_interpolated_geo              = lambda x: np.exp(x.groupby(['country_region','province_state']).apply(lambda group: group.interpolate(method='index', limit_direction='both', limit_area='inside'))["tested_or_nan_log"])
+     , change_tested_interpolated_geo       = lambda x: x[['country_region','province_state','tested_interpolated_geo']].groupby(['country_region','province_state']).pct_change()['tested_interpolated_geo']
+)
+
+import matplotlib.pyplot as plt
+from scipy import interpolate
+
+df_collect_temps = pd.DataFrame()
+
+for lu in set(df_data_clean.lu_id):
+    df_temp = df_data_clean.loc[df_data_clean.lu_id == lu]
+    df_temp = df_temp.assign(
+         tested_or_nan = lambda x: x.tested.replace(0, np.nan)
+       , counter       = lambda x: range(len(x))
+    )
+    contains_tested = df_temp.tested_or_nan.notna().astype(int)
+    if sum(contains_tested) >= 2 :
+        x = df_temp[df_temp.tested_or_nan.notna()].counter
+        y = df_temp[df_temp.tested_or_nan.notna()].tested_or_nan
+        f = interpolate.interp1d(x, y, fill_value='extrapolate')
+        df_temp = df_temp.assign(
+            tested_estimated = lambda x: f(x.counter)
+        )
+        df_collect_temps = df_collect_temps.append(df_temp)
+
+df_data_clean = df_data_clean.merge(df_collect_temps[['lu_id', 'date', 'tested_estimated']], how = 'left', on = ['lu_id', 'date'])
+
+ger_df = df_data_clean.query("country_region == 'Germany'").reset_index()
+
+
+
+
+
+
+# ger_df['tested_estimated'] -ger_df['tested_estimated'].shift(1)
+
+# df_te_clean_estimated.to_csv("df_te_clean_interpolated.tsv", index = False, sep = '\t', encoding='utf-8-sig')
 
 # daily growth active prev day            = COALESCE(DIVIDE(SUM('data_at'[active]   ), SUM('data_at'[lag_1_active]   )),1)       - 1
 # daily growth confirmed prev day         = COALESCE(DIVIDE(SUM('data_at'[confirmed]), SUM('data_at'[lag_1_confirmed])),1)       - 1
@@ -199,9 +245,9 @@ print(power_bi_type_cast(df_data_clean))
 # hist daily growth recovered prev week   = COALESCE(DIVIDE(SUM('data_ot'[recovered]), SUM('data_ot'[lag_7_recovered])),1)^(1/7) - 1
 
 
-positive test rate total           = DIVIDE(SUM('data_at'[confirmed])                                , SUM('data_at'[tested])                               )                                
-positive test rate prev day        = DIVIDE(SUM('data_at'[confirmed])-SUM('data_at'[lag_1_confirmed]), SUM('data_at'[tested]) - SUM('data_at'[lag_1_tested]))
-positive test rate prev week       = DIVIDE(SUM('data_at'[confirmed])-SUM('data_at'[lag_7_confirmed]), SUM('data_at'[tested]) - SUM('data_at'[lag_7_tested]))
-hist positive test rate            = DIVIDE(SUM('data_ot'[confirmed])                                , SUM('data_ot'[tested])                               )                                
-hist positive test rate prev day   = DIVIDE(SUM('data_ot'[confirmed])-SUM('data_ot'[lag_1_confirmed]), SUM('data_ot'[tested]) - SUM('data_ot'[lag_1_tested]))
-hist positive test rate prev week  = DIVIDE(SUM('data_ot'[confirmed])-SUM('data_ot'[lag_7_confirmed]), SUM('data_ot'[tested]) - SUM('data_ot'[lag_7_tested]))
+# positive test rate total           = DIVIDE(SUM('data_at'[confirmed])                                , SUM('data_at'[tested])                               )                                
+# positive test rate prev day        = DIVIDE(SUM('data_at'[confirmed])-SUM('data_at'[lag_1_confirmed]), SUM('data_at'[tested]) - SUM('data_at'[lag_1_tested]))
+# positive test rate prev week       = DIVIDE(SUM('data_at'[confirmed])-SUM('data_at'[lag_7_confirmed]), SUM('data_at'[tested]) - SUM('data_at'[lag_7_tested]))
+# hist positive test rate            = DIVIDE(SUM('data_ot'[confirmed])                                , SUM('data_ot'[tested])                               )                                
+# hist positive test rate prev day   = DIVIDE(SUM('data_ot'[confirmed])-SUM('data_ot'[lag_1_confirmed]), SUM('data_ot'[tested]) - SUM('data_ot'[lag_1_tested]))
+# hist positive test rate prev week  = DIVIDE(SUM('data_ot'[confirmed])-SUM('data_ot'[lag_7_confirmed]), SUM('data_ot'[tested]) - SUM('data_ot'[lag_7_tested]))

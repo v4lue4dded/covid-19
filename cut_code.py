@@ -53,14 +53,6 @@ df_data_clean = df_lu_clean.merge(
     ,   lag_7_active    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'   ].shift(7).fillna(0)
     ).query('''confirmed > 0 or recovered > 0 or deaths > 0 or active> 0'''
     )
-
-
-
-
-
-
-
-
     
 max(df_lu_clean[["iso3", "country_region", "province_state"]].drop_duplicates().iso3.value_counts())
 max(df_lu_clean[["iso3", "country_region", "province_state"]].drop_duplicates().country_region.value_counts()) 
@@ -69,3 +61,11 @@ df_lu_clean.shape
 df_co_clean.groupby(["country_region", "province_state"]).ngroups
 df_co_clean.groupby(["date"]).ngroups
 df_lu_clean.groupby(["iso3"]).ngroups
+
+
+     , tested_or_nan_log                    = lambda x: np.log(x.tested.replace(0, np.nan))
+     , tested_interpolated_geo              = lambda x: np.exp(x.groupby(['country_region','province_state']).apply(lambda group: group.interpolate(method='index', limit_direction='both', limit_area='inside'))["tested_or_nan_log"])
+     , change_tested_interpolated_geo       = lambda x: x[['country_region','province_state','tested_interpolated_geo']].groupby(['country_region','province_state']).pct_change()['tested_interpolated_geo']
+
+
+        df_data_clean.loc[df_data_clean.lu_id == lu].tested_estimated = df_data_clean.loc[df_data_clean.lu_id == lu].merge(df_temp, on=["lu_id","date"]).tested_estimated_y
