@@ -143,10 +143,10 @@ df_te_clean_est = df_te_clean.merge(
     , how = 'left'
     , on = ['lu_id', 'date']).assign(
           tested_announced    = lambda x: x.tested_announced.fillna(0).round() 
-        , tested              = lambda x: x.tested.fillna(0).round()            #tested = tested_announced + tested_estimated 
-        , tested_estimated    = lambda x: (x.tested - x.tested_announced).fillna(0).round()
-        , tested_is_estimated = lambda x: np.where(x.tested_estimated > 0,1,0)
-    )[['lu_id', 'date', 'tested_reported', 'tested_announced', 'tested_estimated', 'tested','tested_is_estimated']]
+        , tested              = lambda x: x.tested.fillna(0).round()            #tested = tested_announced + tested_extrapolated 
+        , tested_extrapolated    = lambda x: (x.tested - x.tested_announced).fillna(0).round()
+        , tested_is_extrapolated = lambda x: np.where(x.tested_extrapolated > 0,1,0)
+    )[['lu_id', 'date', 'tested_reported', 'tested_announced', 'tested_extrapolated', 'tested','tested_is_extrapolated']]
 
 
 df_data_clean = df_co_clean.merge(
@@ -161,21 +161,21 @@ df_data_clean = df_co_clean.merge(
         , active    = lambda x: (x.confirmed - x.deaths - x.recovered).fillna(0)
     )[
         ["lu_id", 'country_region', 'province_state', 'date', 'confirmed', 'recovered', 'deaths'
-        , 'tested', 'active', 'tested_reported', 'tested_announced', 'tested_estimated','tested_is_estimated']
+        , 'tested', 'active', 'tested_reported', 'tested_announced', 'tested_extrapolated','tested_is_extrapolated']
     ].query("date.notnull()", engine = "python").assign(
         lu_id = lambda x: x.lu_id.fillna(-1)
-    ,   lag_1_confirmed           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'          ].shift(1).fillna(0)
-    ,   lag_1_recovered           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'          ].shift(1).fillna(0)
-    ,   lag_1_deaths              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'             ].shift(1).fillna(0)
-    ,   lag_1_tested              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'             ].shift(1).fillna(0)
-    ,   lag_1_active              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'             ].shift(1).fillna(0)
-    ,   lag_1_tested_is_estimated = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested_is_estimated'].shift(1).fillna(0)
-    ,   lag_7_confirmed           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'          ].shift(7).fillna(0)
-    ,   lag_7_recovered           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'          ].shift(7).fillna(0)
-    ,   lag_7_deaths              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'             ].shift(7).fillna(0)
-    ,   lag_7_tested              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'             ].shift(7).fillna(0)
-    ,   lag_7_active              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'             ].shift(7).fillna(0)
-    ,   lag_7_tested_is_estimated = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested_is_estimated'].shift(7).fillna(0)
+    ,   lag_1_confirmed              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'             ].shift(1).fillna(0)
+    ,   lag_1_recovered              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'             ].shift(1).fillna(0)
+    ,   lag_1_deaths                 = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'                ].shift(1).fillna(0)
+    ,   lag_1_tested                 = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'                ].shift(1).fillna(0)
+    ,   lag_1_active                 = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'                ].shift(1).fillna(0)
+    ,   lag_1_tested_is_extrapolated = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested_is_extrapolated'].shift(1).fillna(0)
+    ,   lag_7_confirmed              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'             ].shift(7).fillna(0)
+    ,   lag_7_recovered              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'             ].shift(7).fillna(0)
+    ,   lag_7_deaths                 = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'                ].shift(7).fillna(0)
+    ,   lag_7_tested                 = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'                ].shift(7).fillna(0)
+    ,   lag_7_active                 = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'                ].shift(7).fillna(0)
+    ,   lag_7_tested_is_extrapolated = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested_is_extrapolated'].shift(7).fillna(0)
     )
 
 max_date = max(df_data_clean.date)  
@@ -186,7 +186,7 @@ df_data_clean.query("date == @max_date").to_csv("df_data_clean_max_date.tsv", in
 
 
 
-df_data_clean.query("lu_id == 266")
+
 
 print(df_lu_clean.shape)
 print(df_data_clean.shape)
@@ -233,9 +233,6 @@ print(power_bi_type_cast(df_data_clean))
 
 
 
-# ger_df['tested_estimated'] -ger_df['tested_estimated'].shift(1)
-
-# df_te_clean_estimated.to_csv("df_te_clean_interpolated.tsv", index = False, sep = '\t', encoding='utf-8-sig')
 
 # daily growth active prev day            = COALESCE(DIVIDE(SUM('data_at'[active]   ), SUM('data_at'[lag_1_active]   )),1)       - 1
 # daily growth confirmed prev day         = COALESCE(DIVIDE(SUM('data_at'[confirmed]), SUM('data_at'[lag_1_confirmed])),1)       - 1
