@@ -3,6 +3,8 @@ import numpy as np
 import sys as sys
 import os as os
 import datetime as dt
+from scipy import interpolate
+
 
 pd.set_option('display.max_rows', 1000)
 pd.set_option('display.max_columns', 50)
@@ -26,9 +28,9 @@ df_de.columns
 
 country_regions_to_group = set([
      "Canada"         #because of Problems within John Hopkins Dataset
-    ,"China"          #because of Problems merging with owid
-    ,"Australia"      #because of Problems merging with owid   
-    ,"United Kingdom" #because of Problems merging with owid   
+    ,"China"          #because of Problems merging with owid on iso3
+    ,"Australia"      #because of Problems merging with owid on iso3
+    ,"United Kingdom" #because of Problems merging with owid on iso3  
     ])
 
 join_columns = ['country_region', 'province_state', 'date']
@@ -57,7 +59,7 @@ df_de_clean = clean_df(df_de, id_vars).assign(deaths    = lambda x: x.number).dr
 assert df_co_clean[join_columns].equals(df_re_clean[join_columns]),  "df_co_clean[join_columns] != df_re_clean[join_columns]"
 assert df_re_clean[join_columns].equals(df_de_clean[join_columns]),  "df_re_clean[join_columns] != df_de_clean[join_columns]"
 
-
+# the map visuals need slightly different country names than found in country_region:
 df_country_map_names = pd.DataFrame(
 { 'country_region'    : ['US'                      ,'Congo (Brazzaville)', 'Congo (Kinshasa)','Burma'  ,"Cote d'Ivoire", 'South Sudan', 'Central African Republic','Korea, South']
 , 'country_region_map': ['United States of America','Congo'              , 'Dem. Rep. Congo' ,'Myanmar',"Côte d'Ivoire", 'S. Sudan'   , 'Central African Rep.'    ,'South Korea' ]  
@@ -82,7 +84,7 @@ unique_crps = df_co_clean[['country_region', 'province_state']].drop_duplicates(
 assert df_lu_rename.merge(unique_crps, how = "inner").shape[0] == unique_crps.shape[0]
 df_lu_clean = df_lu_rename.merge(unique_crps, how = "inner")
 
-# only two rows that don't have iso3
+# only two rows that don't have iso3 (Diamond Princess and MS Zaandam	)
 assert df_lu_clean[df_lu_clean.iso3.isna()].shape[0] == 2
 
 df_te = df_owid.merge(
@@ -92,11 +94,10 @@ df_te = df_owid.merge(
     , right_on='iso3'
     , validate="m:1"    
 ).assign(
-   ones = 1
-,  iso_code        = lambda x: x.iso_code.fillna("missing")
-,  iso3            = lambda x: x.iso3.fillna("missing")
-,  location        = lambda x: x.location.fillna("missing")
-,  country_region  = lambda x: x.country_region.fillna("missing")
+      iso_code        = lambda x: x.iso_code.fillna("missing")
+    , iso3            = lambda x: x.iso3.fillna("missing")
+    , location        = lambda x: x.location.fillna("missing")
+    , country_region  = lambda x: x.country_region.fillna("missing")
 )
 
 # #TODO: Fix this to make it empty
@@ -109,42 +110,86 @@ df_te = df_owid.merge(
 # ).shape[0] == 0
 
 df_te_clean = df_te.assign(
-      date   = lambda x: pd.to_datetime(x.date,format = '%Y-%m-%d')
-    , tested = lambda x: x.total_tests
-)[join_columns + ['tested']].groupby(join_columns).sum().reset_index()
+      date            = lambda x: pd.to_datetime(x.date,format = '%Y-%m-%d')
+    , tested_reported = lambda x: x.total_tests.fillna(0)
+)[['lu_id', 'date', 'tested_reported']].groupby(['lu_id', 'date']).sum().reset_index().assign(
+      tested_reported_or_nan = lambda x: x.tested_reported.replace(0, np.nan)
+)
+
+df_collect_temps = pd.DataFrame()
+
+for lu in set(df_te_clean.lu_id):
+    df_temp = df_te_clean.loc[df_te_clean.lu_id == lu]
+    df_temp = df_temp.assign(
+          counter           = lambda x: range(len(x))
+        , tested_announced  = lambda x: x.tested_reported_or_nan.interpolate(method='pad', limit_direction='forward', limit_area=None)
+    )
+    contains_tested = df_temp.tested_reported_or_nan.notna().astype(int)
+    if sum(contains_tested) >= 2 :
+        x = df_temp[df_temp.tested_reported_or_nan.notna()].counter
+        y = df_temp[df_temp.tested_reported_or_nan.notna()].tested_reported_or_nan
+        f = interpolate.interp1d(x, y, fill_value='extrapolate')
+        df_temp = df_temp.assign(
+            tested = lambda x: f(x.counter).clip(0, None)
+        )
+    else:
+        df_temp = df_temp.assign(
+            tested = lambda x: x.tested_announced
+        )
+    df_collect_temps = df_collect_temps.append(df_temp)
+
+df_te_clean_est = df_te_clean.merge(
+      df_collect_temps[['lu_id', 'date', 'tested_announced', 'tested']]
+    , how = 'left'
+    , on = ['lu_id', 'date']).assign(
+          tested_announced    = lambda x: x.tested_announced.fillna(0).round() 
+        , tested              = lambda x: x.tested.fillna(0).round()            #tested = tested_announced + tested_estimated 
+        , tested_estimated    = lambda x: (x.tested - x.tested_announced).fillna(0).round()
+        , tested_is_estimated = lambda x: np.where(x.tested_estimated > 0,1,0)
+    )[['lu_id', 'date', 'tested_reported', 'tested_announced', 'tested_estimated', 'tested','tested_is_estimated']]
+
 
 df_data_clean = df_co_clean.merge(
-    df_re_clean, how = 'inner', validate = "1:1", on = join_columns).merge(
-    df_de_clean, how = 'inner', validate = "1:1", on = join_columns).merge(
-    df_te_clean, how = 'inner', validate = "1:1", on = join_columns).merge(
-    df_lu_clean, how = 'inner', validate = "m:1", on = ['country_region', 'province_state']).assign(
+    df_re_clean    , how = 'inner', validate = "1:1", on = join_columns).merge(
+    df_de_clean    , how = 'inner', validate = "1:1", on = join_columns).merge(
+    df_lu_clean    , how = 'inner', validate = "m:1", on = ['country_region', 'province_state']).merge(
+    df_te_clean_est, how = 'inner', validate = "1:1", on = ['lu_id','date']).assign(
           confirmed = lambda x: x['confirmed'].fillna(0)
         , recovered = lambda x: x['recovered'].fillna(0)
         , deaths    = lambda x: x['deaths'   ].fillna(0)
         , tested    = lambda x: x['tested'   ].fillna(0)
         , active    = lambda x: (x.confirmed - x.deaths - x.recovered).fillna(0)
     )[
-        ["lu_id", 'country_region', 'province_state', 'date', 'confirmed', 'recovered', 'deaths', 'tested', 'active']
+        ["lu_id", 'country_region', 'province_state', 'date', 'confirmed', 'recovered', 'deaths'
+        , 'tested', 'active', 'tested_reported', 'tested_announced', 'tested_estimated','tested_is_estimated']
     ].query("date.notnull()", engine = "python").assign(
         lu_id = lambda x: x.lu_id.fillna(-1)
-    ,   lag_1_confirmed = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'].shift(1).fillna(0)
-    ,   lag_1_recovered = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'].shift(1).fillna(0)
-    ,   lag_1_deaths    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'   ].shift(1).fillna(0)
-    ,   lag_1_tested    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'   ].shift(1).fillna(0)
-    ,   lag_1_active    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'   ].shift(1).fillna(0)
-    ,   lag_7_confirmed = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'].shift(7).fillna(0)
-    ,   lag_7_recovered = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'].shift(7).fillna(0)
-    ,   lag_7_deaths    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'   ].shift(7).fillna(0)
-    ,   lag_7_tested    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'   ].shift(7).fillna(0)
-    ,   lag_7_active    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'   ].shift(7).fillna(0)
-    ).query('''confirmed > 0 or recovered > 0 or deaths > 0 or tested > 0 or active> 0'''
+    ,   lag_1_confirmed           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'          ].shift(1).fillna(0)
+    ,   lag_1_recovered           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'          ].shift(1).fillna(0)
+    ,   lag_1_deaths              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'             ].shift(1).fillna(0)
+    ,   lag_1_tested              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'             ].shift(1).fillna(0)
+    ,   lag_1_active              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'             ].shift(1).fillna(0)
+    ,   lag_1_tested_is_estimated = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested_is_estimated'].shift(1).fillna(0)
+    ,   lag_7_confirmed           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'          ].shift(7).fillna(0)
+    ,   lag_7_recovered           = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'          ].shift(7).fillna(0)
+    ,   lag_7_deaths              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['deaths'             ].shift(7).fillna(0)
+    ,   lag_7_tested              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested'             ].shift(7).fillna(0)
+    ,   lag_7_active              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['active'             ].shift(7).fillna(0)
+    ,   lag_7_tested_is_estimated = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['tested_is_estimated'].shift(7).fillna(0)
     )
 
-max_date = max(df_data_clean.date)
+max_date = max(df_data_clean.date)  
 
-df_lu_clean.to_csv("df_lu_clean.tsv", index = False, sep = '\t', encoding='utf-8-sig')
-df_data_clean.to_csv("df_data_clean.tsv", index = False, sep = '\t' ,encoding='utf-8-sig')
+df_lu_clean.to_csv(                             "df_lu_clean.tsv"           , index = False, sep = '\t', encoding='utf-8-sig')
+df_data_clean.to_csv(                           "df_data_clean.tsv"         , index = False, sep = '\t' ,encoding='utf-8-sig')
 df_data_clean.query("date == @max_date").to_csv("df_data_clean_max_date.tsv", index = False, sep = '\t' ,encoding='utf-8-sig')
+
+
+
+df_data_clean.query("lu_id == 266")
+
+print(df_lu_clean.shape)
+print(df_data_clean.shape)
 
 def power_bi_type_cast(df):
     type_string = '= Table.TransformColumnTypes(#"Promoted Headers",\n{   \n'
@@ -185,41 +230,6 @@ def power_bi_type_cast(df):
 
 print(power_bi_type_cast(df_lu_clean))
 print(power_bi_type_cast(df_data_clean))
-
-df_te_clean_estimated = df_te_clean.assign(
-       tested_or_nan                        = lambda x: x.tested.replace(0, np.nan)
-     , tested_or_nan_log                    = lambda x: np.log(x.tested.replace(0, np.nan))
-     , tested_interpolated_geo              = lambda x: np.exp(x.groupby(['country_region','province_state']).apply(lambda group: group.interpolate(method='index', limit_direction='both', limit_area='inside'))["tested_or_nan_log"])
-     , change_tested_interpolated_geo       = lambda x: x[['country_region','province_state','tested_interpolated_geo']].groupby(['country_region','province_state']).pct_change()['tested_interpolated_geo']
-)
-
-import matplotlib.pyplot as plt
-from scipy import interpolate
-
-df_collect_temps = pd.DataFrame()
-
-for lu in set(df_data_clean.lu_id):
-    df_temp = df_data_clean.loc[df_data_clean.lu_id == lu]
-    df_temp = df_temp.assign(
-         tested_or_nan = lambda x: x.tested.replace(0, np.nan)
-       , counter       = lambda x: range(len(x))
-    )
-    contains_tested = df_temp.tested_or_nan.notna().astype(int)
-    if sum(contains_tested) >= 2 :
-        x = df_temp[df_temp.tested_or_nan.notna()].counter
-        y = df_temp[df_temp.tested_or_nan.notna()].tested_or_nan
-        f = interpolate.interp1d(x, y, fill_value='extrapolate')
-        df_temp = df_temp.assign(
-            tested_estimated = lambda x: f(x.counter)
-        )
-        df_collect_temps = df_collect_temps.append(df_temp)
-
-df_data_clean = df_data_clean.merge(df_collect_temps[['lu_id', 'date', 'tested_estimated']], how = 'left', on = ['lu_id', 'date'])
-
-ger_df = df_data_clean.query("country_region == 'Germany'").reset_index()
-
-
-
 
 
 

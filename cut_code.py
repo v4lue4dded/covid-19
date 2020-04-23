@@ -69,3 +69,28 @@ df_lu_clean.groupby(["iso3"]).ngroups
 
 
         df_data_clean.loc[df_data_clean.lu_id == lu].tested_estimated = df_data_clean.loc[df_data_clean.lu_id == lu].merge(df_temp, on=["lu_id","date"]).tested_estimated_y
+
+
+
+df_te_clean_estimated = df_te_clean.assign(
+       tested_or_nan                        = lambda x: x.tested.replace(0, np.nan)
+     , tested_or_nan_log                    = lambda x: np.log(x.tested.replace(0, np.nan))
+     , tested_interpolated_geo              = lambda x: np.exp(x.groupby(['country_region','province_state']).apply(lambda group: group.interpolate(method='index', limit_direction='both', limit_area='inside'))["tested_or_nan_log"])
+     , change_tested_interpolated_geo       = lambda x: x[['country_region','province_state','tested_interpolated_geo']].groupby(['country_region','province_state']).pct_change()['tested_interpolated_geo']
+)
+
+
+
+
+
+
+
+
+s = pd.Series([np.nan, "single_one", np.nan,
+               "fill_two_more", np.nan, np.nan, np.nan,
+               4.71, np.nan])
+t = pd.Series([1,1,1,3,3,2,2,2,2])
+
+df = pd.DataFrame(data=dict(s=s, t=t), index=s.index)
+
+df.groupby(["t"]).apply(lambda group: group.interpolate(method='pad'))['s']               
