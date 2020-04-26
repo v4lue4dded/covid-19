@@ -145,7 +145,7 @@ df_te_clean_est = df_te_clean.merge(
           tested_announced    = lambda x: x.tested_announced.fillna(0).round() 
         , tested              = lambda x: x.tested.fillna(0).round()            #tested = tested_announced + tested_extrapolated 
         , tested_extrapolated    = lambda x: (x.tested - x.tested_announced).fillna(0).round()
-        , tested_is_extrapolated = lambda x: np.where(x.tested_extrapolated > 0,1,0)
+        , tested_is_extrapolated = lambda x: np.where(x.tested_reported_or_nan.isna() ,1 ,0 )
     )[['lu_id', 'date', 'tested_reported', 'tested_announced', 'tested_extrapolated', 'tested','tested_is_extrapolated']]
 
 
