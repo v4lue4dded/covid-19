@@ -94,3 +94,7 @@ t = pd.Series([1,1,1,3,3,2,2,2,2])
 df = pd.DataFrame(data=dict(s=s, t=t), index=s.index)
 
 df.groupby(["t"]).apply(lambda group: group.interpolate(method='pad'))['s']               
+
+    , tested_confirmed       = lambda x: x.groupby(['country_region', 'province_state']).apply(
+        lambda group: group.interpolate(method='pad')
+        )["tested_reported_or_nan"]
