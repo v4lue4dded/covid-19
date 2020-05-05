@@ -5,21 +5,22 @@ import pandas as pd
 import os as os
 import datetime as dt
 from scipy import interpolate
+import os.path
 
 pd.set_option('display.max_rows', 1000)
 pd.set_option('display.max_columns', 50)
 
-data_path = os.getcwd() + '\\COVID-19\\csse_covid_19_data\\'
+data_path = os.path.join(os.getcwd(),'COVID-19','csse_covid_19_data')
 print(data_path)
 
-df_lu = pd.read_csv(data_path+ 'UID_ISO_FIPS_LookUp_Table.csv')
-df_co = pd.read_csv(data_path+ 'csse_covid_19_time_series//time_series_covid19_confirmed_global.csv')
-df_re = pd.read_csv(data_path+ 'csse_covid_19_time_series//time_series_covid19_recovered_global.csv')
-df_de = pd.read_csv(data_path+ 'csse_covid_19_time_series//time_series_covid19_deaths_global.csv')
+df_lu = pd.read_csv(os.path.join(data_path,'UID_ISO_FIPS_LookUp_Table.csv'))
+df_co = pd.read_csv(os.path.join(data_path,'csse_covid_19_time_series', 'time_series_covid19_confirmed_global.csv'))
+df_re = pd.read_csv(os.path.join(data_path,'csse_covid_19_time_series', 'time_series_covid19_recovered_global.csv'))
+df_de = pd.read_csv(os.path.join(data_path,'csse_covid_19_time_series', 'time_series_covid19_deaths_global.csv'))
 
-df_europe  = pd.read_csv(os.getcwd() + '//european_countries.tsv', sep='\t')
+df_europe = pd.read_csv(os.path.join(os.getcwd(),  'european_countries.tsv'), sep='\t')
 
-df_owid = pd.read_csv(os.getcwd() + '\\covid-19-data\\public\\data\\owid-covid-data.csv')
+df_owid = pd.read_csv(os.path.join(os.getcwd(),'covid-19-data', 'public', 'data', 'owid-covid-data.csv'))
 
 df_lu.columns
 df_co.columns
