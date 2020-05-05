@@ -1,10 +1,10 @@
-import pandas as pd
-import numpy as np
 import sys as sys
+sys.path[0]=''
+import numpy as np
+import pandas as pd
 import os as os
 import datetime as dt
 from scipy import interpolate
-
 
 pd.set_option('display.max_rows', 1000)
 pd.set_option('display.max_columns', 50)
