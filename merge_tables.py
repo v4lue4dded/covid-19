@@ -93,7 +93,7 @@ df_te = df_owid.merge(
     , how = 'outer'
     , left_on='iso_code'
     , right_on='iso3'
-    , validate="m:1"    
+    # , validate="m:1"    
 ).assign(
       iso_code        = lambda x: x.iso_code.fillna("missing")
     , iso3            = lambda x: x.iso3.fillna("missing")
@@ -151,10 +151,10 @@ df_te_clean_est = df_te_clean.merge(
 
 
 df_data_clean = df_co_clean.merge(
-    df_re_clean    , how = 'inner', validate = "1:1", on = join_columns).merge(
-    df_de_clean    , how = 'inner', validate = "1:1", on = join_columns).merge(
-    df_lu_clean    , how = 'inner', validate = "m:1", on = ['country_region', 'province_state']).merge(
-    df_te_clean_est, how = 'inner', validate = "1:1", on = ['lu_id','date']).assign(
+    df_re_clean    , how = 'inner', on = join_columns).merge(                          #, validate = "1:1"  
+    df_de_clean    , how = 'inner', on = join_columns).merge(                          #, validate = "1:1"  
+    df_lu_clean    , how = 'inner', on = ['country_region', 'province_state']).merge(  #, validate = "m:1"                          
+    df_te_clean_est, how = 'inner', on = ['lu_id','date']).assign(                     #, validate = "1:1"       
           confirmed = lambda x: x['confirmed'].fillna(0)
         , recovered = lambda x: x['recovered'].fillna(0)
         , deaths    = lambda x: x['deaths'   ].fillna(0)
