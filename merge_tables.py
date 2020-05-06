@@ -89,7 +89,7 @@ df_lu_clean = df_lu_rename.merge(unique_crps, how = "inner")
 assert df_lu_clean[df_lu_clean.iso3.isnull()].shape[0] == 2
 
 df_te = df_owid.merge(
-      df_lu_clean[df_lu_clean.iso3.notna()]
+      df_lu_clean[df_lu_clean.iso3.notnull()]
     , how = 'outer'
     , left_on='iso_code'
     , right_on='iso3'
@@ -125,10 +125,10 @@ for lu in set(df_te_clean.lu_id):
           counter           = lambda x: range(len(x))
         , tested_announced  = lambda x: x.tested_reported_or_nan.interpolate(method='pad', limit_direction='forward', limit_area=None)
     )
-    contains_tested = df_temp.tested_reported_or_nan.notna().astype(int)
+    contains_tested = df_temp.tested_reported_or_nan.notnull().astype(int)
     if sum(contains_tested) >= 2 :
-        x = df_temp[df_temp.tested_reported_or_nan.notna()].counter
-        y = df_temp[df_temp.tested_reported_or_nan.notna()].tested_reported_or_nan
+        x = df_temp[df_temp.tested_reported_or_nan.notnull()].counter
+        y = df_temp[df_temp.tested_reported_or_nan.notnull()].tested_reported_or_nan
         f = interpolate.interp1d(x, y, fill_value='extrapolate')
         df_temp = df_temp.assign(
             tested = lambda x: f(x.counter).clip(0, None)
