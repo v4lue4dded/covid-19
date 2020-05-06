@@ -86,7 +86,7 @@ assert df_lu_rename.merge(unique_crps, how = "inner").shape[0] == unique_crps.sh
 df_lu_clean = df_lu_rename.merge(unique_crps, how = "inner")
 
 # only two rows that don't have iso3 (Diamond Princess and MS Zaandam	)
-assert df_lu_clean[df_lu_clean.iso3.isna()].shape[0] == 2
+assert df_lu_clean[df_lu_clean.iso3.isnull()].shape[0] == 2
 
 df_te = df_owid.merge(
       df_lu_clean[df_lu_clean.iso3.notna()]
@@ -146,7 +146,7 @@ df_te_clean_est = df_te_clean.merge(
           tested_announced    = lambda x: x.tested_announced.fillna(0).round() 
         , tested              = lambda x: x.tested.fillna(0).round()            #tested = tested_announced + tested_extrapolated 
         , tested_extrapolated    = lambda x: (x.tested - x.tested_announced).fillna(0).round()
-        , tested_is_extrapolated = lambda x: np.where(x.tested_reported_or_nan.isna() ,1 ,0 )
+        , tested_is_extrapolated = lambda x: np.where(x.tested_reported_or_nan.isnull() ,1 ,0 )
     )[['lu_id', 'date', 'tested_reported', 'tested_announced', 'tested_extrapolated', 'tested','tested_is_extrapolated']]
 
 
