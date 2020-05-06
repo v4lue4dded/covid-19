@@ -70,7 +70,7 @@ df_lu_rename = df_lu.assign(
       province_state  = lambda x: x['Province_State'].fillna('')
     , country_region  = lambda x: x['Country_Region']
     , lu_id           = lambda x: range(x.shape[0])
-).drop(columns = ['Province_State', 'Country_Region']).merge(
+).drop(['Province_State', 'Country_Region'], axis=1).merge(
     df_country_map_names, how = 'outer', on = ['country_region']
 ).merge(
     df_europe, how = 'outer', on = ['iso2']
