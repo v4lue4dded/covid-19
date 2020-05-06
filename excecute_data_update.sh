@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ../../home/ubuntu/repositories/covid-19/
+
 git submodule foreach --recursive 'git pull'
 python merge_tables.py
 git add COVID-19
