@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cd ../../home/ubuntu/repositories/covid-19/
+
 sudo git submodule foreach --recursive 'git pull'
 sudo python merge_tables.py
 sudo git add date.txt
