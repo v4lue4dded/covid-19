@@ -186,7 +186,9 @@ df_data_clean.to_csv(                           "df_data_clean.tsv"         , in
 df_data_clean.query("date == @max_date").to_csv("df_data_clean_max_date.tsv", index = False, sep = '\t' ,encoding='utf-8-sig')
 
 
-
+f = open("date.txt", "w")
+f.write(dt.datetime.now().strftime("%d/%m/%Y %H:%M:%S"))
+f.close()
 
 
 print(df_lu_clean.shape)

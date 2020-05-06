@@ -2,6 +2,7 @@
 
 sudo git submodule foreach --recursive 'git pull'
 sudo python merge_tables.py
+sudo git add date.txt
 sudo git add COVID-19
 sudo git add covid-19-data
 sudo git add df_data_clean.tsv
