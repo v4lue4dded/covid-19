@@ -53,9 +53,9 @@ def clean_df(df, id_vars):
         , country_region  = lambda x: x['Country/Region']
     )[join_columns + ['number']].groupby(join_columns).sum().reset_index()
 
-df_co_clean = clean_df(df_co, id_vars).assign(confirmed = lambda x: x.number).drop(columns = 'number')
-df_re_clean = clean_df(df_re, id_vars).assign(recovered = lambda x: x.number).drop(columns = 'number')
-df_de_clean = clean_df(df_de, id_vars).assign(deaths    = lambda x: x.number).drop(columns = 'number')
+df_co_clean = clean_df(df_co, id_vars).assign(confirmed = lambda x: x.number).drop(columns = ['number'])
+df_re_clean = clean_df(df_re, id_vars).assign(recovered = lambda x: x.number).drop(columns = ['number'])
+df_de_clean = clean_df(df_de, id_vars).assign(deaths    = lambda x: x.number).drop(columns = ['number'])
 
 assert df_co_clean[join_columns].equals(df_re_clean[join_columns]),  "df_co_clean[join_columns] != df_re_clean[join_columns]"
 assert df_re_clean[join_columns].equals(df_de_clean[join_columns]),  "df_re_clean[join_columns] != df_de_clean[join_columns]"
