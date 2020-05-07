@@ -1,204 +1,204 @@
 ﻿UID	iso2	iso3	code3	FIPS	Admin2	Lat	Long_	Combined_Key	Population	country_region	lu_id	province_state	country_region_map	country_group	index
 4	AF	AFG	4.0			33.93911	67.709953	Afghanistan	38928341.0	Afghanistan	0		Afghanistan		0
-8	AL	ALB	8.0			41.1533	20.1683	Albania	2877800.0	Albania	1		Albania		105
-12	DZ	DZA	12.0			28.0339	1.6596	Algeria	43851043.0	Algeria	2		Algeria		210
-20	AD	AND	20.0			42.5063	1.5218	Andorra	77265.0	Andorra	3		Andorra		315
-24	AO	AGO	24.0			-11.2027	17.8739	Angola	32866268.0	Angola	4		Angola		420
-28	AG	ATG	28.0			17.0608	-61.7964	Antigua and Barbuda	97928.0	Antigua and Barbuda	5		Antigua and Barbuda		525
-32	AR	ARG	32.0			-38.4161	-63.6167	Argentina	45195777.0	Argentina	6		Argentina		630
-51	AM	ARM	51.0			40.0691	45.0382	Armenia	2963234.0	Armenia	7		Armenia		735
-40	AT	AUT	40.0			47.5162	14.5501	Austria	9006400.0	Austria	8		Austria	european_union	945
-31	AZ	AZE	31.0			40.1431	47.5769	Azerbaijan	10139175.0	Azerbaijan	9		Azerbaijan		1050
-44	BS	BHS	44.0			25.025885	-78.035889	Bahamas	393248.0	Bahamas	10		Bahamas		1155
-48	BH	BHR	48.0			26.0275	50.55	Bahrain	1701583.0	Bahrain	11		Bahrain		1260
-50	BD	BGD	50.0			23.685	90.3563	Bangladesh	164689383.0	Bangladesh	12		Bangladesh		1365
-52	BB	BRB	52.0			13.1939	-59.5432	Barbados	287371.0	Barbados	13		Barbados		1470
-112	BY	BLR	112.0			53.7098	27.9534	Belarus	9449321.0	Belarus	14		Belarus		1575
-56	BE	BEL	56.0			50.8333	4.469936	Belgium	11589616.0	Belgium	15		Belgium	european_union	1680
-84	BZ	BLZ	84.0			17.1899	-88.4976	Belize	397621.0	Belize	16		Belize		1785
-204	BJ	BEN	204.0			9.3077	2.3158	Benin	12123198.0	Benin	17		Benin		1890
-64	BT	BTN	64.0			27.5142	90.4336	Bhutan	771612.0	Bhutan	18		Bhutan		1995
-68	BO	BOL	68.0			-16.2902	-63.5887	Bolivia	11673029.0	Bolivia	19		Bolivia		2100
-70	BA	BIH	70.0			43.9159	17.6791	Bosnia and Herzegovina	3280815.0	Bosnia and Herzegovina	20		Bosnia and Herzegovina		2205
-72	BW	BWA	72.0			-22.3285	24.6849	Botswana	2351625.0	Botswana	21		Botswana		2310
-76	BR	BRA	76.0			-14.235	-51.9253	Brazil	212559409.0	Brazil	22		Brazil		2415
-96	BN	BRN	96.0			4.5353	114.7277	Brunei	437483.0	Brunei	23		Brunei		2520
-100	BG	BGR	100.0			42.7339	25.4858	Bulgaria	6948445.0	Bulgaria	24		Bulgaria	european_union	2625
-854	BF	BFA	854.0			12.2383	-1.5616	Burkina Faso	20903278.0	Burkina Faso	25		Burkina Faso		2730
-104	MM	MMR	104.0			21.9162	95.956	Burma	54409794.0	Burma	26		Myanmar		2835
-108	BI	BDI	108.0			-3.3731	29.9189	Burundi	11890781.0	Burundi	27		Burundi		2940
-132	CV	CPV	132.0			16.5388	-23.0418	Cabo Verde	555988.0	Cabo Verde	28		Cabo Verde		3045
-116	KH	KHM	116.0			11.55	104.9167	Cambodia	16718971.0	Cambodia	29		Cambodia		3150
-120	CM	CMR	120.0			3.8480000000000003	11.5021	Cameroon	26545864.0	Cameroon	30		Cameroon		3255
-140	CF	CAF	140.0			6.6111	20.9394	Central African Republic	4829764.0	Central African Republic	31		Central African Rep.		3465
-148	TD	TCD	148.0			15.4542	18.7322	Chad	16425859.0	Chad	32		Chad		3570
-152	CL	CHL	152.0			-35.6751	-71.543	Chile	19116209.0	Chile	33		Chile		3675
-170	CO	COL	170.0			4.5709	-74.2973	Colombia	50882884.0	Colombia	34		Colombia		3885
-178	CG	COG	178.0			-4.2634	15.2832	Congo (Brazzaville)	5518092.0	Congo (Brazzaville)	35		Congo		4095
-180	CD	COD	180.0			-4.322447	15.307045	Congo (Kinshasa)	89561404.0	Congo (Kinshasa)	36		Dem. Rep. Congo		4200
-174	KM	COM	174.0			-11.6455	43.3333	Comoros	869595.0	Comoros	37		Comoros		3990
-188	CR	CRI	188.0			9.7489	-83.7534	Costa Rica	5094114.0	Costa Rica	38		Costa Rica		4305
-384	CI	CIV	384.0			7.54	-5.5471	Cote d'Ivoire	26378275.0	Cote d'Ivoire	39		Côte d'Ivoire		4410
-191	HR	HRV	191.0			45.1	15.2	Croatia	4105268.0	Croatia	40		Croatia	european_union	4515
-192	CU	CUB	192.0			21.521757	-77.78116700000001	Cuba	11326616.0	Cuba	41		Cuba		4620
-196	CY	CYP	196.0			35.1264	33.4299	Cyprus	1207361.0	Cyprus	42		Cyprus	european_union	4725
-203	CZ	CZE	203.0			49.8175	15.472999999999999	Czechia	10708982.0	Czechia	43		Czechia	european_union	4830
-208	DK	DNK	208.0			56.2639	9.5018	Denmark	5792203.0	Denmark	44		Denmark	european_union	4935
-234	FO	FRO	234.0			61.8926	-6.9118	Faroe Islands, Denmark	48865.0	Denmark	202	Faroe Islands	Denmark		5040
-304	GL	GRL	304.0			71.7069	-42.6043	Greenland, Denmark	56772.0	Denmark	203	Greenland	Denmark		5145
-9999						0.0	0.0	Diamond Princess		Diamond Princess	45		Diamond Princess		5250
-8888						0.0	0.0	MS Zaandam		MS Zaandam	115		MS Zaandam		12075
-516		NAM	516.0			-22.9576	18.4904	Namibia	2540916.0	Namibia	116		Namibia		13755
-262	DJ	DJI	262.0			11.8251	42.5903	Djibouti	988002.0	Djibouti	46		Djibouti		5355
-212	DM	DMA	212.0			15.415	-61.371	Dominica	71991.0	Dominica	47		Dominica		5460
-214	DO	DOM	214.0			18.7357	-70.1627	Dominican Republic	10847904.0	Dominican Republic	48		Dominican Republic		5565
-218	EC	ECU	218.0			-1.8312	-78.1834	Ecuador	17643060.0	Ecuador	49		Ecuador		5670
-818	EG	EGY	818.0			26.820553000000004	30.802497999999996	Egypt	102334403.0	Egypt	50		Egypt		5775
-222	SV	SLV	222.0			13.7942	-88.8965	El Salvador	6486201.0	El Salvador	51		El Salvador		5880
-226	GQ	GNQ	226.0			1.6508	10.2679	Equatorial Guinea	1402985.0	Equatorial Guinea	52		Equatorial Guinea		5985
-232	ER	ERI	232.0			15.1794	39.7823	Eritrea	3546427.0	Eritrea	53		Eritrea		6090
-233	EE	EST	233.0			58.5953	25.0136	Estonia	1326539.0	Estonia	54		Estonia	european_union	6195
-748	SZ	SWZ	748.0			-26.5225	31.4659	Eswatini	1160164.0	Eswatini	55		Eswatini		6300
-231	ET	ETH	231.0			9.145	40.4897	Ethiopia	114963583.0	Ethiopia	56		Ethiopia		6405
-242	FJ	FJI	242.0			-17.7134	178.065	Fiji	896444.0	Fiji	57		Fiji		6510
-246	FI	FIN	246.0			61.92411	25.748151	Finland	5540718.0	Finland	58		Finland	european_union	6615
-250	FR	FRA	250.0			46.2276	2.2137	France	65273512.0	France	59		France	european_union	6720
-254	GF	GUF	254.0			4.0	-53.0	French Guiana, France	298682.0	France	204	French Guiana	France		6825
-258	PF	PYF	258.0			-17.6797	149.4068	French Polynesia, France	280904.0	France	205	French Polynesia	France		6930
-312	GP	GLP	312.0			16.265	-61.551	Guadeloupe, France	400127.0	France	206	Guadeloupe	France		7035
-474	MQ	MTQ	474.0			14.6415	-61.0242	Martinique, France	375265.0	France	207	Martinique	France		7140
-175	YT	MYT	175.0			-12.8275	45.166244	Mayotte, France	272813.0	France	208	Mayotte	France		7245
-540	NC	NCL	540.0			-20.904304999999997	165.618042	New Caledonia, France	285491.0	France	209	New Caledonia	France		7350
-638	RE	REU	638.0			-21.1151	55.5364	Reunion, France	895308.0	France	210	Reunion	France		7455
-652	BL	BLM	652.0			17.9	-62.8333	Saint Barthelemy, France	9885.0	France	211	Saint Barthelemy	France		7560
-666	PM	SPM	666.0			46.8852	-56.3159	Saint Pierre and Miquelon, France	5795.0	France	212	Saint Pierre and Miquelon	France		7665
-663	MF	MAF	663.0			18.0708	-63.0501	St Martin, France	38659.0	France	213	St Martin	France		7770
-266	GA	GAB	266.0			-0.8037	11.6094	Gabon	2225728.0	Gabon	60		Gabon		7875
-270	GM	GMB	270.0			13.4432	-15.3101	Gambia	2416664.0	Gambia	61		Gambia		7980
-268	GE	GEO	268.0			42.3154	43.3569	Georgia	3989175.0	Georgia	62		Georgia		8085
-276	DE	DEU	276.0			51.165690999999995	10.451526	Germany	83783945.0	Germany	63		Germany	european_union	8190
-288	GH	GHA	288.0			7.9465	-1.0232	Ghana	31072945.0	Ghana	64		Ghana		8295
-300	GR	GRC	300.0			39.0742	21.8243	Greece	10423056.0	Greece	65		Greece	european_union	8400
-308	GD	GRD	308.0			12.1165	-61.678999999999995	Grenada	112519.0	Grenada	66		Grenada		8505
-320	GT	GTM	320.0			15.7835	-90.2308	Guatemala	17915567.0	Guatemala	67		Guatemala		8610
-324	GN	GIN	324.0			9.9456	-9.6966	Guinea	13132792.0	Guinea	68		Guinea		8715
-624	GW	GNB	624.0			11.8037	-15.1804	Guinea-Bissau	1967998.0	Guinea-Bissau	69		Guinea-Bissau		8820
-328	GY	GUY	328.0			4.860416000000001	-58.93018000000001	Guyana	786559.0	Guyana	70		Guyana		8925
-332	HT	HTI	332.0			18.9712	-72.2852	Haiti	11402533.0	Haiti	71		Haiti		9030
-336	VA	VAT	336.0			41.9029	12.4534	Holy See	809.0	Holy See	72		Holy See		9135
-340	HN	HND	340.0			15.2	-86.2419	Honduras	9904608.0	Honduras	73		Honduras		9240
-348	HU	HUN	348.0			47.1625	19.5033	Hungary	9660350.0	Hungary	74		Hungary	european_union	9345
-352	IS	ISL	352.0			64.9631	-19.0208	Iceland	341250.0	Iceland	75		Iceland		9450
-356	IN	IND	356.0			20.593684	78.96288	India	1380004385.0	India	76		India		9555
-360	ID	IDN	360.0			-0.7893	113.9213	Indonesia	273523621.0	Indonesia	77		Indonesia		9660
-364	IR	IRN	364.0			32.427908	53.68804599999999	Iran	83992953.0	Iran	78		Iran		9765
-368	IQ	IRQ	368.0			33.223191	43.679291	Iraq	40222503.0	Iraq	79		Iraq		9870
-372	IE	IRL	372.0			53.1424	-7.6921	Ireland	4937796.0	Ireland	80		Ireland	european_union	9975
-376	IL	ISR	376.0			31.046051000000002	34.851612	Israel	8655541.0	Israel	81		Israel		10080
-380	IT	ITA	380.0			41.87194	12.56738	Italy	60461828.0	Italy	82		Italy	european_union	10185
-388	JM	JAM	388.0			18.1096	-77.2975	Jamaica	2961161.0	Jamaica	83		Jamaica		10290
-392	JP	JPN	392.0			36.204824	138.252924	Japan	126476458.0	Japan	84		Japan		10395
-400	JO	JOR	400.0			31.24	36.51	Jordan	10203140.0	Jordan	85		Jordan		10500
-398	KZ	KAZ	398.0			48.0196	66.9237	Kazakhstan	18776707.0	Kazakhstan	86		Kazakhstan		10605
-404	KE	KEN	404.0			-0.0236	37.9062	Kenya	53771300.0	Kenya	87		Kenya		10710
-410	KR	KOR	410.0			35.907757000000004	127.766922	Korea, South	51269183.0	Korea, South	88		South Korea		10815
-383	XK	XKS	383.0			42.602636	20.902977	Kosovo	1810366.0	Kosovo	89		Kosovo		10920
-414	KW	KWT	414.0			29.311659999999996	47.481766	Kuwait	4270563.0	Kuwait	90		Kuwait		11025
-417	KG	KGZ	417.0			41.20438	74.766098	Kyrgyzstan	6524191.0	Kyrgyzstan	91		Kyrgyzstan		11130
-418	LA	LAO	418.0			19.856270000000002	102.495496	Laos	7275556.0	Laos	92		Laos		11235
-428	LV	LVA	428.0			56.8796	24.6032	Latvia	1886202.0	Latvia	93		Latvia	european_union	11340
-422	LB	LBN	422.0			33.8547	35.8623	Lebanon	6825442.0	Lebanon	94		Lebanon		11445
-430	LR	LBR	430.0			6.4280550000000005	-9.429499	Liberia	5057677.0	Liberia	95		Liberia		11550
-434	LY	LBY	434.0			26.3351	17.228331	Libya	6871287.0	Libya	96		Libya		11655
-438	LI	LIE	438.0			47.14	9.55	Liechtenstein	38137.0	Liechtenstein	97		Liechtenstein		11760
-440	LT	LTU	440.0			55.1694	23.8813	Lithuania	2722291.0	Lithuania	98		Lithuania	european_union	11865
-442	LU	LUX	442.0			49.8153	6.1296	Luxembourg	625976.0	Luxembourg	99		Luxembourg	european_union	11970
-450	MG	MDG	450.0			-18.766947000000002	46.869107	Madagascar	27691019.0	Madagascar	100		Madagascar		12180
-454	MW	MWI	454.0			-13.2543	34.3015	Malawi	19129955.0	Malawi	101		Malawi		12285
-458	MY	MYS	458.0			4.210483999999999	101.97576600000001	Malaysia	32365998.0	Malaysia	102		Malaysia		12390
-462	MV	MDV	462.0			3.2028	73.2207	Maldives	540542.0	Maldives	103		Maldives		12495
-466	ML	MLI	466.0			17.570692	-3.9961660000000006	Mali	20250834.0	Mali	104		Mali		12600
-470	MT	MLT	470.0			35.9375	14.3754	Malta	441539.0	Malta	105		Malta	european_union	12705
-478	MR	MRT	478.0			21.0079	-10.9408	Mauritania	4649660.0	Mauritania	106		Mauritania		12810
-480	MU	MUS	480.0			-20.348404000000002	57.552152	Mauritius	1271767.0	Mauritius	107		Mauritius		12915
-484	MX	MEX	484.0			23.6345	-102.5528	Mexico	128932753.0	Mexico	108		Mexico		13020
-498	MD	MDA	498.0			47.4116	28.3699	Moldova	4033963.0	Moldova	109		Moldova		13125
-492	MC	MCO	492.0			43.7333	7.4167	Monaco	39244.0	Monaco	110		Monaco		13230
-496	MN	MNG	496.0			46.8625	103.8467	Mongolia	3278292.0	Mongolia	111		Mongolia		13335
-499	ME	MNE	499.0			42.708678000000006	19.37439	Montenegro	628062.0	Montenegro	112		Montenegro		13440
-504	MA	MAR	504.0			31.7917	-7.0926	Morocco	36910558.0	Morocco	113		Morocco		13545
-508	MZ	MOZ	508.0			-18.665695	35.529562	Mozambique	31255435.0	Mozambique	114		Mozambique		13650
-524	NP	NPL	524.0			28.1667	84.25	Nepal	29136808.0	Nepal	117		Nepal		13860
-528	NL	NLD	528.0			52.1326	5.2913	Netherlands	17134873.0	Netherlands	118		Netherlands	european_union	13965
-533	AW	ABW	533.0			12.5211	-69.9683	Aruba, Netherlands	106766.0	Netherlands	214	Aruba	Netherlands		14070
-531	CW	CUW	531.0			12.1696	-68.99	Curacao, Netherlands	164100.0	Netherlands	215	Curacao	Netherlands		14280
-534	SX	SXM	534.0			18.0425	-63.0548	Sint Maarten, Netherlands	42882.0	Netherlands	216	Sint Maarten	Netherlands		14385
-535	BQ	BES	535.0			12.1784	-68.2385	Bonaire, Sint Eustatius and Saba, Netherlands	26221.0	Netherlands	217	Bonaire, Sint Eustatius and Saba	Netherlands		14175
-554	NZ	NZL	554.0			-40.9006	174.886	New Zealand	4822233.0	New Zealand	119		New Zealand		14490
-558	NI	NIC	558.0			12.865416	-85.207229	Nicaragua	6624554.0	Nicaragua	120		Nicaragua		14595
-562	NE	NER	562.0			17.607789	8.081666	Niger	24206636.0	Niger	121		Niger		14700
-566	NG	NGA	566.0			9.082	8.6753	Nigeria	206139587.0	Nigeria	122		Nigeria		14805
-807	MK	MKD	807.0			41.6086	21.7453	North Macedonia	2083380.0	North Macedonia	123		North Macedonia		14910
-578	NO	NOR	578.0			60.472	8.4689	Norway	5421242.0	Norway	124		Norway		15015
-512	OM	OMN	512.0			21.512583	55.923255000000005	Oman	5106622.0	Oman	125		Oman		15120
-586	PK	PAK	586.0			30.3753	69.3451	Pakistan	220892331.0	Pakistan	126		Pakistan		15225
-591	PA	PAN	591.0			8.538	-80.7821	Panama	4314768.0	Panama	127		Panama		15330
-598	PG	PNG	598.0			-6.314993	143.95555	Papua New Guinea	8947027.0	Papua New Guinea	128		Papua New Guinea		15435
-600	PY	PRY	600.0			-23.4425	-58.4438	Paraguay	7132530.0	Paraguay	129		Paraguay		15540
-604	PE	PER	604.0			-9.19	-75.0152	Peru	32971846.0	Peru	130		Peru		15645
-608	PH	PHL	608.0			12.879721	121.77401699999999	Philippines	109581085.0	Philippines	131		Philippines		15750
-616	PL	POL	616.0			51.9194	19.1451	Poland	37846605.0	Poland	132		Poland	european_union	15855
-620	PT	PRT	620.0			39.3999	-8.2245	Portugal	10196707.0	Portugal	133		Portugal	european_union	15960
-634	QA	QAT	634.0			25.3548	51.1839	Qatar	2881060.0	Qatar	134		Qatar		16065
-642	RO	ROU	642.0			45.9432	24.9668	Romania	19237682.0	Romania	135		Romania	european_union	16170
-643	RU	RUS	643.0			61.52401	105.31875600000001	Russia	145934460.0	Russia	136		Russia		16275
-646	RW	RWA	646.0			-1.9403	29.8739	Rwanda	12952209.0	Rwanda	137		Rwanda		16380
-659	KN	KNA	659.0			17.357822	-62.782998	Saint Kitts and Nevis	53192.0	Saint Kitts and Nevis	138		Saint Kitts and Nevis		16485
-662	LC	LCA	662.0			13.9094	-60.9789	Saint Lucia	183629.0	Saint Lucia	139		Saint Lucia		16590
-670	VC	VCT	670.0			12.9843	-61.2872	Saint Vincent and the Grenadines	110947.0	Saint Vincent and the Grenadines	140		Saint Vincent and the Grenadines		16695
-674	SM	SMR	674.0			43.9424	12.4578	San Marino	33938.0	San Marino	141		San Marino		16800
-678	ST	STP	678.0			0.1864	6.6131	Sao Tome and Principe	219161.0	Sao Tome and Principe	142		Sao Tome and Principe		16905
-682	SA	SAU	682.0			23.885942	45.079162	Saudi Arabia	34813867.0	Saudi Arabia	143		Saudi Arabia		17010
-686	SN	SEN	686.0			14.4974	-14.4524	Senegal	16743930.0	Senegal	144		Senegal		17115
-688	RS	SRB	688.0			44.0165	21.0059	Serbia	8737370.0	Serbia	145		Serbia		17220
-690	SC	SYC	690.0			-4.6796	55.492	Seychelles	98340.0	Seychelles	146		Seychelles		17325
-694	SL	SLE	694.0			8.460555000000001	-11.779889	Sierra Leone	7976985.0	Sierra Leone	147		Sierra Leone		17430
-702	SG	SGP	702.0			1.2833	103.8333	Singapore	5850343.0	Singapore	148		Singapore		17535
-703	SK	SVK	703.0			48.669	19.699	Slovakia	5459643.0	Slovakia	149		Slovakia	european_union	17640
-705	SI	SVN	705.0			46.1512	14.9955	Slovenia	2078932.0	Slovenia	150		Slovenia	european_union	17745
-706	SO	SOM	706.0			5.152149	46.199616	Somalia	15893219.0	Somalia	151		Somalia		17850
-710	ZA	ZAF	710.0			-30.5595	22.9375	South Africa	59308690.0	South Africa	152		South Africa		17955
-728	SS	SSD	728.0			6.877000000000001	31.307	South Sudan	11193729.0	South Sudan	153		S. Sudan		18060
-724	ES	ESP	724.0			40.463667	-3.7492199999999998	Spain	46754783.0	Spain	154		Spain	european_union	18165
-144	LK	LKA	144.0			7.873054	80.77179699999999	Sri Lanka	21413250.0	Sri Lanka	174		Sri Lanka		18270
-729	SD	SDN	729.0			12.8628	30.2176	Sudan	43849269.0	Sudan	175		Sudan		18375
-740	SR	SUR	740.0			3.9193	-56.0278	Suriname	586634.0	Suriname	176		Suriname		18480
-752	SE	SWE	752.0			60.128161	18.643501	Sweden	10099270.0	Sweden	177		Sweden	european_union	18585
-756	CH	CHE	756.0			46.8182	8.2275	Switzerland	8654618.0	Switzerland	178		Switzerland		18690
-760	SY	SYR	760.0			34.802075	38.996815000000005	Syria	17500657.0	Syria	179		Syria		18795
-158	TW	TWN	158.0			23.7	121.0	Taiwan*	23816775.0	Taiwan*	180		Taiwan*		18900
-762	TJ	TJK	762.0			38.861	71.2761	Tajikistan	9537642.0	Tajikistan	181		Tajikistan		19005
-834	TZ	TZA	834.0			-6.369028	34.888822	Tanzania	59734213.0	Tanzania	182		Tanzania		19110
-764	TH	THA	764.0			15.870032	100.992541	Thailand	69799978.0	Thailand	183		Thailand		19215
-626	TL	TLS	626.0			-8.874217	125.727539	Timor-Leste	1318442.0	Timor-Leste	184		Timor-Leste		19320
-768	TG	TGO	768.0			8.6195	0.8248	Togo	8278737.0	Togo	185		Togo		19425
-780	TT	TTO	780.0			10.6918	-61.2225	Trinidad and Tobago	1399491.0	Trinidad and Tobago	186		Trinidad and Tobago		19530
-788	TN	TUN	788.0			33.886917	9.537499	Tunisia	11818618.0	Tunisia	187		Tunisia		19635
-792	TR	TUR	792.0			38.9637	35.2433	Turkey	84339067.0	Turkey	188		Turkey		19740
-800	UG	UGA	800.0			1.373333	32.290275	Uganda	45741000.0	Uganda	189		Uganda		19950
-804	UA	UKR	804.0			48.3794	31.1656	Ukraine	43733759.0	Ukraine	190		Ukraine		20055
-784	AE	ARE	784.0			23.424076	53.847818000000004	United Arab Emirates	9890400.0	United Arab Emirates	191		United Arab Emirates		20160
-826	GB	GBR	826.0			55.3781	-3.4360000000000004	United Kingdom	67886004.0	United Kingdom	192		United Kingdom		20265
-858	UY	URY	858.0			-32.5228	-55.7658	Uruguay	3473727.0	Uruguay	193		Uruguay		20370
-860	UZ	UZB	860.0			41.377491	64.585262	Uzbekistan	33469199.0	Uzbekistan	194		Uzbekistan		20475
-862	VE	VEN	862.0			6.4238	-66.5897	Venezuela	28435943.0	Venezuela	195		Venezuela		20580
-704	VN	VNM	704.0			14.058323999999999	108.277199	Vietnam	97338583.0	Vietnam	196		Vietnam		20685
-275	PS	PSE	275.0			31.9522	35.2332	West Bank and Gaza	5101416.0	West Bank and Gaza	197		West Bank and Gaza		20790
-732	EH	ESH	732.0			24.2155	-12.8858	Western Sahara	597330.0	Western Sahara	198		Western Sahara		20895
-887	YE	YEM	887.0			15.552726999999999	48.516388	Yemen	29825968.0	Yemen	199		Yemen		21000
-894	ZM	ZMB	894.0			-13.133897	27.849332	Zambia	18383956.0	Zambia	200		Zambia		21105
-716	ZW	ZWE	716.0			-19.015438	29.154857	Zimbabwe	14862927.0	Zimbabwe	201		Zimbabwe		21210
-36	AU	AUS	36.0			-25.0	133.0	Australia	25459700.0	Australia	228		Australia		840
-124	CA	CAN	124.0			60.0	-95.0	Canada	37855702.0	Canada	237		Canada		3360
-156	CN	CHN	156.0			30.5928	114.3055	China	1404676330.0	China	253		China		3780
-840	US	USA	840.0			40.0	-100.0	US	329466283.0	US	287		United States of America		19845
+8	AL	ALB	8.0			41.1533	20.1683	Albania	2877800.0	Albania	1		Albania		106
+12	DZ	DZA	12.0			28.0339	1.6596	Algeria	43851043.0	Algeria	2		Algeria		212
+20	AD	AND	20.0			42.5063	1.5218	Andorra	77265.0	Andorra	3		Andorra		318
+24	AO	AGO	24.0			-11.2027	17.8739	Angola	32866268.0	Angola	4		Angola		424
+28	AG	ATG	28.0			17.0608	-61.7964	Antigua and Barbuda	97928.0	Antigua and Barbuda	5		Antigua and Barbuda		530
+32	AR	ARG	32.0			-38.4161	-63.6167	Argentina	45195777.0	Argentina	6		Argentina		636
+51	AM	ARM	51.0			40.0691	45.0382	Armenia	2963234.0	Armenia	7		Armenia		742
+40	AT	AUT	40.0			47.5162	14.5501	Austria	9006400.0	Austria	8		Austria	european_union	954
+31	AZ	AZE	31.0			40.1431	47.5769	Azerbaijan	10139175.0	Azerbaijan	9		Azerbaijan		1060
+44	BS	BHS	44.0			25.025885	-78.035889	Bahamas	393248.0	Bahamas	10		Bahamas		1166
+48	BH	BHR	48.0			26.0275	50.55	Bahrain	1701583.0	Bahrain	11		Bahrain		1272
+50	BD	BGD	50.0			23.685	90.3563	Bangladesh	164689383.0	Bangladesh	12		Bangladesh		1378
+52	BB	BRB	52.0			13.1939	-59.5432	Barbados	287371.0	Barbados	13		Barbados		1484
+112	BY	BLR	112.0			53.7098	27.9534	Belarus	9449321.0	Belarus	14		Belarus		1590
+56	BE	BEL	56.0			50.8333	4.469936	Belgium	11589616.0	Belgium	15		Belgium	european_union	1696
+84	BZ	BLZ	84.0			17.1899	-88.4976	Belize	397621.0	Belize	16		Belize		1802
+204	BJ	BEN	204.0			9.3077	2.3158	Benin	12123198.0	Benin	17		Benin		1908
+64	BT	BTN	64.0			27.5142	90.4336	Bhutan	771612.0	Bhutan	18		Bhutan		2014
+68	BO	BOL	68.0			-16.2902	-63.5887	Bolivia	11673029.0	Bolivia	19		Bolivia		2120
+70	BA	BIH	70.0			43.9159	17.6791	Bosnia and Herzegovina	3280815.0	Bosnia and Herzegovina	20		Bosnia and Herzegovina		2226
+72	BW	BWA	72.0			-22.3285	24.6849	Botswana	2351625.0	Botswana	21		Botswana		2332
+76	BR	BRA	76.0			-14.235	-51.9253	Brazil	212559409.0	Brazil	22		Brazil		2438
+96	BN	BRN	96.0			4.5353	114.7277	Brunei	437483.0	Brunei	23		Brunei		2544
+100	BG	BGR	100.0			42.7339	25.4858	Bulgaria	6948445.0	Bulgaria	24		Bulgaria	european_union	2650
+854	BF	BFA	854.0			12.2383	-1.5616	Burkina Faso	20903278.0	Burkina Faso	25		Burkina Faso		2756
+104	MM	MMR	104.0			21.9162	95.956	Burma	54409794.0	Burma	26		Myanmar		2862
+108	BI	BDI	108.0			-3.3731	29.9189	Burundi	11890781.0	Burundi	27		Burundi		2968
+132	CV	CPV	132.0			16.5388	-23.0418	Cabo Verde	555988.0	Cabo Verde	28		Cabo Verde		3074
+116	KH	KHM	116.0			11.55	104.9167	Cambodia	16718971.0	Cambodia	29		Cambodia		3180
+120	CM	CMR	120.0			3.8480000000000003	11.5021	Cameroon	26545864.0	Cameroon	30		Cameroon		3286
+140	CF	CAF	140.0			6.6111	20.9394	Central African Republic	4829764.0	Central African Republic	31		Central African Rep.		3498
+148	TD	TCD	148.0			15.4542	18.7322	Chad	16425859.0	Chad	32		Chad		3604
+152	CL	CHL	152.0			-35.6751	-71.543	Chile	19116209.0	Chile	33		Chile		3710
+170	CO	COL	170.0			4.5709	-74.2973	Colombia	50882884.0	Colombia	34		Colombia		3922
+178	CG	COG	178.0			-4.2634	15.2832	Congo (Brazzaville)	5518092.0	Congo (Brazzaville)	35		Congo		4134
+180	CD	COD	180.0			-4.322447	15.307045	Congo (Kinshasa)	89561404.0	Congo (Kinshasa)	36		Dem. Rep. Congo		4240
+174	KM	COM	174.0			-11.6455	43.3333	Comoros	869595.0	Comoros	37		Comoros		4028
+188	CR	CRI	188.0			9.7489	-83.7534	Costa Rica	5094114.0	Costa Rica	38		Costa Rica		4346
+384	CI	CIV	384.0			7.54	-5.5471	Cote d'Ivoire	26378275.0	Cote d'Ivoire	39		Côte d'Ivoire		4452
+191	HR	HRV	191.0			45.1	15.2	Croatia	4105268.0	Croatia	40		Croatia	european_union	4558
+192	CU	CUB	192.0			21.521757	-77.78116700000001	Cuba	11326616.0	Cuba	41		Cuba		4664
+196	CY	CYP	196.0			35.1264	33.4299	Cyprus	1207361.0	Cyprus	42		Cyprus	european_union	4770
+203	CZ	CZE	203.0			49.8175	15.472999999999999	Czechia	10708982.0	Czechia	43		Czechia	european_union	4876
+208	DK	DNK	208.0			56.2639	9.5018	Denmark	5792203.0	Denmark	44		Denmark	european_union	4982
+234	FO	FRO	234.0			61.8926	-6.9118	Faroe Islands, Denmark	48865.0	Denmark	202	Faroe Islands	Denmark		5088
+304	GL	GRL	304.0			71.7069	-42.6043	Greenland, Denmark	56772.0	Denmark	203	Greenland	Denmark		5194
+9999						0.0	0.0	Diamond Princess		Diamond Princess	45		Diamond Princess		5300
+8888						0.0	0.0	MS Zaandam		MS Zaandam	115		MS Zaandam		12190
+516		NAM	516.0			-22.9576	18.4904	Namibia	2540916.0	Namibia	116		Namibia		13886
+262	DJ	DJI	262.0			11.8251	42.5903	Djibouti	988002.0	Djibouti	46		Djibouti		5406
+212	DM	DMA	212.0			15.415	-61.371	Dominica	71991.0	Dominica	47		Dominica		5512
+214	DO	DOM	214.0			18.7357	-70.1627	Dominican Republic	10847904.0	Dominican Republic	48		Dominican Republic		5618
+218	EC	ECU	218.0			-1.8312	-78.1834	Ecuador	17643060.0	Ecuador	49		Ecuador		5724
+818	EG	EGY	818.0			26.820553000000004	30.802497999999996	Egypt	102334403.0	Egypt	50		Egypt		5830
+222	SV	SLV	222.0			13.7942	-88.8965	El Salvador	6486201.0	El Salvador	51		El Salvador		5936
+226	GQ	GNQ	226.0			1.6508	10.2679	Equatorial Guinea	1402985.0	Equatorial Guinea	52		Equatorial Guinea		6042
+232	ER	ERI	232.0			15.1794	39.7823	Eritrea	3546427.0	Eritrea	53		Eritrea		6148
+233	EE	EST	233.0			58.5953	25.0136	Estonia	1326539.0	Estonia	54		Estonia	european_union	6254
+748	SZ	SWZ	748.0			-26.5225	31.4659	Eswatini	1160164.0	Eswatini	55		Eswatini		6360
+231	ET	ETH	231.0			9.145	40.4897	Ethiopia	114963583.0	Ethiopia	56		Ethiopia		6466
+242	FJ	FJI	242.0			-17.7134	178.065	Fiji	896444.0	Fiji	57		Fiji		6572
+246	FI	FIN	246.0			61.92411	25.748151	Finland	5540718.0	Finland	58		Finland	european_union	6678
+250	FR	FRA	250.0			46.2276	2.2137	France	65273512.0	France	59		France	european_union	6784
+254	GF	GUF	254.0			4.0	-53.0	French Guiana, France	298682.0	France	204	French Guiana	France		6890
+258	PF	PYF	258.0			-17.6797	149.4068	French Polynesia, France	280904.0	France	205	French Polynesia	France		6996
+312	GP	GLP	312.0			16.265	-61.551	Guadeloupe, France	400127.0	France	206	Guadeloupe	France		7102
+474	MQ	MTQ	474.0			14.6415	-61.0242	Martinique, France	375265.0	France	207	Martinique	France		7208
+175	YT	MYT	175.0			-12.8275	45.166244	Mayotte, France	272813.0	France	208	Mayotte	France		7314
+540	NC	NCL	540.0			-20.904304999999997	165.618042	New Caledonia, France	285491.0	France	209	New Caledonia	France		7420
+638	RE	REU	638.0			-21.1151	55.5364	Reunion, France	895308.0	France	210	Reunion	France		7526
+652	BL	BLM	652.0			17.9	-62.8333	Saint Barthelemy, France	9885.0	France	211	Saint Barthelemy	France		7632
+666	PM	SPM	666.0			46.8852	-56.3159	Saint Pierre and Miquelon, France	5795.0	France	212	Saint Pierre and Miquelon	France		7738
+663	MF	MAF	663.0			18.0708	-63.0501	St Martin, France	38659.0	France	213	St Martin	France		7844
+266	GA	GAB	266.0			-0.8037	11.6094	Gabon	2225728.0	Gabon	60		Gabon		7950
+270	GM	GMB	270.0			13.4432	-15.3101	Gambia	2416664.0	Gambia	61		Gambia		8056
+268	GE	GEO	268.0			42.3154	43.3569	Georgia	3989175.0	Georgia	62		Georgia		8162
+276	DE	DEU	276.0			51.165690999999995	10.451526	Germany	83783945.0	Germany	63		Germany	european_union	8268
+288	GH	GHA	288.0			7.9465	-1.0232	Ghana	31072945.0	Ghana	64		Ghana		8374
+300	GR	GRC	300.0			39.0742	21.8243	Greece	10423056.0	Greece	65		Greece	european_union	8480
+308	GD	GRD	308.0			12.1165	-61.678999999999995	Grenada	112519.0	Grenada	66		Grenada		8586
+320	GT	GTM	320.0			15.7835	-90.2308	Guatemala	17915567.0	Guatemala	67		Guatemala		8692
+324	GN	GIN	324.0			9.9456	-9.6966	Guinea	13132792.0	Guinea	68		Guinea		8798
+624	GW	GNB	624.0			11.8037	-15.1804	Guinea-Bissau	1967998.0	Guinea-Bissau	69		Guinea-Bissau		8904
+328	GY	GUY	328.0			4.860416000000001	-58.93018000000001	Guyana	786559.0	Guyana	70		Guyana		9010
+332	HT	HTI	332.0			18.9712	-72.2852	Haiti	11402533.0	Haiti	71		Haiti		9116
+336	VA	VAT	336.0			41.9029	12.4534	Holy See	809.0	Holy See	72		Holy See		9222
+340	HN	HND	340.0			15.2	-86.2419	Honduras	9904608.0	Honduras	73		Honduras		9328
+348	HU	HUN	348.0			47.1625	19.5033	Hungary	9660350.0	Hungary	74		Hungary	european_union	9434
+352	IS	ISL	352.0			64.9631	-19.0208	Iceland	341250.0	Iceland	75		Iceland		9540
+356	IN	IND	356.0			20.593684	78.96288	India	1380004385.0	India	76		India		9646
+360	ID	IDN	360.0			-0.7893	113.9213	Indonesia	273523621.0	Indonesia	77		Indonesia		9752
+364	IR	IRN	364.0			32.427908	53.68804599999999	Iran	83992953.0	Iran	78		Iran		9858
+368	IQ	IRQ	368.0			33.223191	43.679291	Iraq	40222503.0	Iraq	79		Iraq		9964
+372	IE	IRL	372.0			53.1424	-7.6921	Ireland	4937796.0	Ireland	80		Ireland	european_union	10070
+376	IL	ISR	376.0			31.046051000000002	34.851612	Israel	8655541.0	Israel	81		Israel		10176
+380	IT	ITA	380.0			41.87194	12.56738	Italy	60461828.0	Italy	82		Italy	european_union	10282
+388	JM	JAM	388.0			18.1096	-77.2975	Jamaica	2961161.0	Jamaica	83		Jamaica		10388
+392	JP	JPN	392.0			36.204824	138.252924	Japan	126476458.0	Japan	84		Japan		10494
+400	JO	JOR	400.0			31.24	36.51	Jordan	10203140.0	Jordan	85		Jordan		10600
+398	KZ	KAZ	398.0			48.0196	66.9237	Kazakhstan	18776707.0	Kazakhstan	86		Kazakhstan		10706
+404	KE	KEN	404.0			-0.0236	37.9062	Kenya	53771300.0	Kenya	87		Kenya		10812
+410	KR	KOR	410.0			35.907757000000004	127.766922	Korea, South	51269183.0	Korea, South	88		South Korea		10918
+383	XK	XKS	383.0			42.602636	20.902977	Kosovo	1810366.0	Kosovo	89		Kosovo		11024
+414	KW	KWT	414.0			29.311659999999996	47.481766	Kuwait	4270563.0	Kuwait	90		Kuwait		11130
+417	KG	KGZ	417.0			41.20438	74.766098	Kyrgyzstan	6524191.0	Kyrgyzstan	91		Kyrgyzstan		11236
+418	LA	LAO	418.0			19.856270000000002	102.495496	Laos	7275556.0	Laos	92		Laos		11342
+428	LV	LVA	428.0			56.8796	24.6032	Latvia	1886202.0	Latvia	93		Latvia	european_union	11448
+422	LB	LBN	422.0			33.8547	35.8623	Lebanon	6825442.0	Lebanon	94		Lebanon		11554
+430	LR	LBR	430.0			6.4280550000000005	-9.429499	Liberia	5057677.0	Liberia	95		Liberia		11660
+434	LY	LBY	434.0			26.3351	17.228331	Libya	6871287.0	Libya	96		Libya		11766
+438	LI	LIE	438.0			47.14	9.55	Liechtenstein	38137.0	Liechtenstein	97		Liechtenstein		11872
+440	LT	LTU	440.0			55.1694	23.8813	Lithuania	2722291.0	Lithuania	98		Lithuania	european_union	11978
+442	LU	LUX	442.0			49.8153	6.1296	Luxembourg	625976.0	Luxembourg	99		Luxembourg	european_union	12084
+450	MG	MDG	450.0			-18.766947000000002	46.869107	Madagascar	27691019.0	Madagascar	100		Madagascar		12296
+454	MW	MWI	454.0			-13.2543	34.3015	Malawi	19129955.0	Malawi	101		Malawi		12402
+458	MY	MYS	458.0			4.210483999999999	101.97576600000001	Malaysia	32365998.0	Malaysia	102		Malaysia		12508
+462	MV	MDV	462.0			3.2028	73.2207	Maldives	540542.0	Maldives	103		Maldives		12614
+466	ML	MLI	466.0			17.570692	-3.9961660000000006	Mali	20250834.0	Mali	104		Mali		12720
+470	MT	MLT	470.0			35.9375	14.3754	Malta	441539.0	Malta	105		Malta	european_union	12826
+478	MR	MRT	478.0			21.0079	-10.9408	Mauritania	4649660.0	Mauritania	106		Mauritania		12932
+480	MU	MUS	480.0			-20.348404000000002	57.552152	Mauritius	1271767.0	Mauritius	107		Mauritius		13038
+484	MX	MEX	484.0			23.6345	-102.5528	Mexico	128932753.0	Mexico	108		Mexico		13144
+498	MD	MDA	498.0			47.4116	28.3699	Moldova	4033963.0	Moldova	109		Moldova		13250
+492	MC	MCO	492.0			43.7333	7.4167	Monaco	39244.0	Monaco	110		Monaco		13356
+496	MN	MNG	496.0			46.8625	103.8467	Mongolia	3278292.0	Mongolia	111		Mongolia		13462
+499	ME	MNE	499.0			42.708678000000006	19.37439	Montenegro	628062.0	Montenegro	112		Montenegro		13568
+504	MA	MAR	504.0			31.7917	-7.0926	Morocco	36910558.0	Morocco	113		Morocco		13674
+508	MZ	MOZ	508.0			-18.665695	35.529562	Mozambique	31255435.0	Mozambique	114		Mozambique		13780
+524	NP	NPL	524.0			28.1667	84.25	Nepal	29136808.0	Nepal	117		Nepal		13992
+528	NL	NLD	528.0			52.1326	5.2913	Netherlands	17134873.0	Netherlands	118		Netherlands	european_union	14098
+533	AW	ABW	533.0			12.5211	-69.9683	Aruba, Netherlands	106766.0	Netherlands	214	Aruba	Netherlands		14204
+531	CW	CUW	531.0			12.1696	-68.99	Curacao, Netherlands	164100.0	Netherlands	215	Curacao	Netherlands		14416
+534	SX	SXM	534.0			18.0425	-63.0548	Sint Maarten, Netherlands	42882.0	Netherlands	216	Sint Maarten	Netherlands		14522
+535	BQ	BES	535.0			12.1784	-68.2385	Bonaire, Sint Eustatius and Saba, Netherlands	26221.0	Netherlands	217	Bonaire, Sint Eustatius and Saba	Netherlands		14310
+554	NZ	NZL	554.0			-40.9006	174.886	New Zealand	4822233.0	New Zealand	119		New Zealand		14628
+558	NI	NIC	558.0			12.865416	-85.207229	Nicaragua	6624554.0	Nicaragua	120		Nicaragua		14734
+562	NE	NER	562.0			17.607789	8.081666	Niger	24206636.0	Niger	121		Niger		14840
+566	NG	NGA	566.0			9.082	8.6753	Nigeria	206139587.0	Nigeria	122		Nigeria		14946
+807	MK	MKD	807.0			41.6086	21.7453	North Macedonia	2083380.0	North Macedonia	123		North Macedonia		15052
+578	NO	NOR	578.0			60.472	8.4689	Norway	5421242.0	Norway	124		Norway		15158
+512	OM	OMN	512.0			21.512583	55.923255000000005	Oman	5106622.0	Oman	125		Oman		15264
+586	PK	PAK	586.0			30.3753	69.3451	Pakistan	220892331.0	Pakistan	126		Pakistan		15370
+591	PA	PAN	591.0			8.538	-80.7821	Panama	4314768.0	Panama	127		Panama		15476
+598	PG	PNG	598.0			-6.314993	143.95555	Papua New Guinea	8947027.0	Papua New Guinea	128		Papua New Guinea		15582
+600	PY	PRY	600.0			-23.4425	-58.4438	Paraguay	7132530.0	Paraguay	129		Paraguay		15688
+604	PE	PER	604.0			-9.19	-75.0152	Peru	32971846.0	Peru	130		Peru		15794
+608	PH	PHL	608.0			12.879721	121.77401699999999	Philippines	109581085.0	Philippines	131		Philippines		15900
+616	PL	POL	616.0			51.9194	19.1451	Poland	37846605.0	Poland	132		Poland	european_union	16006
+620	PT	PRT	620.0			39.3999	-8.2245	Portugal	10196707.0	Portugal	133		Portugal	european_union	16112
+634	QA	QAT	634.0			25.3548	51.1839	Qatar	2881060.0	Qatar	134		Qatar		16218
+642	RO	ROU	642.0			45.9432	24.9668	Romania	19237682.0	Romania	135		Romania	european_union	16324
+643	RU	RUS	643.0			61.52401	105.31875600000001	Russia	145934460.0	Russia	136		Russia		16430
+646	RW	RWA	646.0			-1.9403	29.8739	Rwanda	12952209.0	Rwanda	137		Rwanda		16536
+659	KN	KNA	659.0			17.357822	-62.782998	Saint Kitts and Nevis	53192.0	Saint Kitts and Nevis	138		Saint Kitts and Nevis		16642
+662	LC	LCA	662.0			13.9094	-60.9789	Saint Lucia	183629.0	Saint Lucia	139		Saint Lucia		16748
+670	VC	VCT	670.0			12.9843	-61.2872	Saint Vincent and the Grenadines	110947.0	Saint Vincent and the Grenadines	140		Saint Vincent and the Grenadines		16854
+674	SM	SMR	674.0			43.9424	12.4578	San Marino	33938.0	San Marino	141		San Marino		16960
+678	ST	STP	678.0			0.1864	6.6131	Sao Tome and Principe	219161.0	Sao Tome and Principe	142		Sao Tome and Principe		17066
+682	SA	SAU	682.0			23.885942	45.079162	Saudi Arabia	34813867.0	Saudi Arabia	143		Saudi Arabia		17172
+686	SN	SEN	686.0			14.4974	-14.4524	Senegal	16743930.0	Senegal	144		Senegal		17278
+688	RS	SRB	688.0			44.0165	21.0059	Serbia	8737370.0	Serbia	145		Serbia		17384
+690	SC	SYC	690.0			-4.6796	55.492	Seychelles	98340.0	Seychelles	146		Seychelles		17490
+694	SL	SLE	694.0			8.460555000000001	-11.779889	Sierra Leone	7976985.0	Sierra Leone	147		Sierra Leone		17596
+702	SG	SGP	702.0			1.2833	103.8333	Singapore	5850343.0	Singapore	148		Singapore		17702
+703	SK	SVK	703.0			48.669	19.699	Slovakia	5459643.0	Slovakia	149		Slovakia	european_union	17808
+705	SI	SVN	705.0			46.1512	14.9955	Slovenia	2078932.0	Slovenia	150		Slovenia	european_union	17914
+706	SO	SOM	706.0			5.152149	46.199616	Somalia	15893219.0	Somalia	151		Somalia		18020
+710	ZA	ZAF	710.0			-30.5595	22.9375	South Africa	59308690.0	South Africa	152		South Africa		18126
+728	SS	SSD	728.0			6.877000000000001	31.307	South Sudan	11193729.0	South Sudan	153		S. Sudan		18232
+724	ES	ESP	724.0			40.463667	-3.7492199999999998	Spain	46754783.0	Spain	154		Spain	european_union	18338
+144	LK	LKA	144.0			7.873054	80.77179699999999	Sri Lanka	21413250.0	Sri Lanka	174		Sri Lanka		18444
+729	SD	SDN	729.0			12.8628	30.2176	Sudan	43849269.0	Sudan	175		Sudan		18550
+740	SR	SUR	740.0			3.9193	-56.0278	Suriname	586634.0	Suriname	176		Suriname		18656
+752	SE	SWE	752.0			60.128161	18.643501	Sweden	10099270.0	Sweden	177		Sweden	european_union	18762
+756	CH	CHE	756.0			46.8182	8.2275	Switzerland	8654618.0	Switzerland	178		Switzerland		18868
+760	SY	SYR	760.0			34.802075	38.996815000000005	Syria	17500657.0	Syria	179		Syria		18974
+158	TW	TWN	158.0			23.7	121.0	Taiwan*	23816775.0	Taiwan*	180		Taiwan*		19080
+762	TJ	TJK	762.0			38.861	71.2761	Tajikistan	9537642.0	Tajikistan	181		Tajikistan		19186
+834	TZ	TZA	834.0			-6.369028	34.888822	Tanzania	59734213.0	Tanzania	182		Tanzania		19292
+764	TH	THA	764.0			15.870032	100.992541	Thailand	69799978.0	Thailand	183		Thailand		19398
+626	TL	TLS	626.0			-8.874217	125.727539	Timor-Leste	1318442.0	Timor-Leste	184		Timor-Leste		19504
+768	TG	TGO	768.0			8.6195	0.8248	Togo	8278737.0	Togo	185		Togo		19610
+780	TT	TTO	780.0			10.6918	-61.2225	Trinidad and Tobago	1399491.0	Trinidad and Tobago	186		Trinidad and Tobago		19716
+788	TN	TUN	788.0			33.886917	9.537499	Tunisia	11818618.0	Tunisia	187		Tunisia		19822
+792	TR	TUR	792.0			38.9637	35.2433	Turkey	84339067.0	Turkey	188		Turkey		19928
+800	UG	UGA	800.0			1.373333	32.290275	Uganda	45741000.0	Uganda	189		Uganda		20140
+804	UA	UKR	804.0			48.3794	31.1656	Ukraine	43733759.0	Ukraine	190		Ukraine		20246
+784	AE	ARE	784.0			23.424076	53.847818000000004	United Arab Emirates	9890400.0	United Arab Emirates	191		United Arab Emirates		20352
+826	GB	GBR	826.0			55.3781	-3.4360000000000004	United Kingdom	67886004.0	United Kingdom	192		United Kingdom		20458
+858	UY	URY	858.0			-32.5228	-55.7658	Uruguay	3473727.0	Uruguay	193		Uruguay		20564
+860	UZ	UZB	860.0			41.377491	64.585262	Uzbekistan	33469199.0	Uzbekistan	194		Uzbekistan		20670
+862	VE	VEN	862.0			6.4238	-66.5897	Venezuela	28435943.0	Venezuela	195		Venezuela		20776
+704	VN	VNM	704.0			14.058323999999999	108.277199	Vietnam	97338583.0	Vietnam	196		Vietnam		20882
+275	PS	PSE	275.0			31.9522	35.2332	West Bank and Gaza	5101416.0	West Bank and Gaza	197		West Bank and Gaza		20988
+732	EH	ESH	732.0			24.2155	-12.8858	Western Sahara	597330.0	Western Sahara	198		Western Sahara		21094
+887	YE	YEM	887.0			15.552726999999999	48.516388	Yemen	29825968.0	Yemen	199		Yemen		21200
+894	ZM	ZMB	894.0			-13.133897	27.849332	Zambia	18383956.0	Zambia	200		Zambia		21306
+716	ZW	ZWE	716.0			-19.015438	29.154857	Zimbabwe	14862927.0	Zimbabwe	201		Zimbabwe		21412
+36	AU	AUS	36.0			-25.0	133.0	Australia	25459700.0	Australia	228		Australia		848
+124	CA	CAN	124.0			60.0	-95.0	Canada	37855702.0	Canada	237		Canada		3392
+156	CN	CHN	156.0			30.5928	114.3055	China	1404676330.0	China	253		China		3816
+840	US	USA	840.0			40.0	-100.0	US	329466283.0	US	287		United States of America		20034
