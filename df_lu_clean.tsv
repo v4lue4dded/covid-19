@@ -44,8 +44,8 @@
 196	CY	CYP	196.0			35.1264	33.4299	Cyprus	1207361.0	Cyprus	121		Cyprus	european_union	5895
 203	CZ	CZE	203.0			49.8175	15.472999999999999	Czechia	10708982.0	Czechia	122		Czechia	european_union	6026
 208	DK	DNK	208.0			56.2639	9.5018	Denmark	5792203.0	Denmark	123		Denmark	european_union	6157
-234	FO	FRO	234.0			61.8926	-6.9118	Faroe Islands, Denmark	48865.0	Denmark	515	Faroe Islands	Denmark		6288
-304	GL	GRL	304.0			71.7069	-42.6043	Greenland, Denmark	56772.0	Denmark	516	Greenland	Denmark		6419
+234	FO	FRO	234.0			61.8926	-6.9118	Faroe Islands, Denmark	48865.0	Denmark	541	Faroe Islands	Denmark		6288
+304	GL	GRL	304.0			71.7069	-42.6043	Greenland, Denmark	56772.0	Denmark	542	Greenland	Denmark		6419
 9999						0.0	0.0	Diamond Princess		Diamond Princess	124		Diamond Princess		6550
 8888						0.0	0.0	MS Zaandam		MS Zaandam	315		MS Zaandam		15196
 516		NAM	516.0			-22.9576	18.4904	Namibia	2540916.0	Namibia	316		Namibia		17292
@@ -63,16 +63,16 @@
 242	FJ	FJI	242.0			-17.7134	178.065	Fiji	896444.0	Fiji	136		Fiji		8122
 246	FI	FIN	246.0			61.92411	25.748151	Finland	5540718.0	Finland	137		Finland	european_union	8253
 250	FR	FRA	250.0			46.2276	2.2137	France	65273512.0	France	138		France	european_union	8384
-254	GF	GUF	254.0			4.0	-53.0	French Guiana, France	298682.0	France	517	French Guiana	France		8515
-258	PF	PYF	258.0			-17.6797	149.4068	French Polynesia, France	280904.0	France	518	French Polynesia	France		8646
-312	GP	GLP	312.0			16.265	-61.551	Guadeloupe, France	400127.0	France	519	Guadeloupe	France		8777
-474	MQ	MTQ	474.0			14.6415	-61.0242	Martinique, France	375265.0	France	520	Martinique	France		8908
-175	YT	MYT	175.0			-12.8275	45.166244	Mayotte, France	272813.0	France	521	Mayotte	France		9039
-540	NC	NCL	540.0			-20.904304999999997	165.618042	New Caledonia, France	285491.0	France	522	New Caledonia	France		9170
-638	RE	REU	638.0			-21.1151	55.5364	Reunion, France	895308.0	France	523	Reunion	France		9301
-652	BL	BLM	652.0			17.9	-62.8333	Saint Barthelemy, France	9885.0	France	524	Saint Barthelemy	France		9432
-666	PM	SPM	666.0			46.8852	-56.3159	Saint Pierre and Miquelon, France	5795.0	France	525	Saint Pierre and Miquelon	France		9563
-663	MF	MAF	663.0			18.0708	-63.0501	St Martin, France	38659.0	France	526	St Martin	France		9694
+254	GF	GUF	254.0			4.0	-53.0	French Guiana, France	298682.0	France	543	French Guiana	France		8515
+258	PF	PYF	258.0			-17.6797	149.4068	French Polynesia, France	280904.0	France	544	French Polynesia	France		8646
+312	GP	GLP	312.0			16.265	-61.551	Guadeloupe, France	400127.0	France	545	Guadeloupe	France		8777
+474	MQ	MTQ	474.0			14.6415	-61.0242	Martinique, France	375265.0	France	546	Martinique	France		8908
+175	YT	MYT	175.0			-12.8275	45.166244	Mayotte, France	272813.0	France	547	Mayotte	France		9039
+540	NC	NCL	540.0			-20.904304999999997	165.618042	New Caledonia, France	285491.0	France	548	New Caledonia	France		9170
+638	RE	REU	638.0			-21.1151	55.5364	Reunion, France	895308.0	France	549	Reunion	France		9301
+652	BL	BLM	652.0			17.9	-62.8333	Saint Barthelemy, France	9885.0	France	550	Saint Barthelemy	France		9432
+666	PM	SPM	666.0			46.8852	-56.3159	Saint Pierre and Miquelon, France	5795.0	France	551	Saint Pierre and Miquelon	France		9563
+663	MF	MAF	663.0			18.0708	-63.0501	St Martin, France	38659.0	France	552	St Martin	France		9694
 266	GA	GAB	266.0			-0.8037	11.6094	Gabon	2225728.0	Gabon	139		Gabon		9825
 270	GM	GMB	270.0			13.4432	-15.3101	Gambia	2416664.0	Gambia	140		Gambia		9956
 268	GE	GEO	268.0			42.3154	43.3569	Georgia	3989175.0	Georgia	141		Georgia		10087
@@ -131,10 +131,10 @@
 508	MZ	MOZ	508.0			-18.665695	35.529562	Mozambique	31255435.0	Mozambique	314		Mozambique		17161
 524	NP	NPL	524.0			28.1667	84.25	Nepal	29136808.0	Nepal	317		Nepal		17423
 528	NL	NLD	528.0			52.1326	5.2913	Netherlands	17134873.0	Netherlands	318		Netherlands	european_union	17554
-533	AW	ABW	533.0			12.5211	-69.9683	Aruba, Netherlands	106766.0	Netherlands	527	Aruba	Netherlands		17685
-531	CW	CUW	531.0			12.1696	-68.99	Curacao, Netherlands	164100.0	Netherlands	528	Curacao	Netherlands		17947
-534	SX	SXM	534.0			18.0425	-63.0548	Sint Maarten, Netherlands	42882.0	Netherlands	529	Sint Maarten	Netherlands		18078
-535	BQ	BES	535.0			12.1784	-68.2385	Bonaire, Sint Eustatius and Saba, Netherlands	26221.0	Netherlands	530	Bonaire, Sint Eustatius and Saba	Netherlands		17816
+533	AW	ABW	533.0			12.5211	-69.9683	Aruba, Netherlands	106766.0	Netherlands	553	Aruba	Netherlands		17685
+531	CW	CUW	531.0			12.1696	-68.99	Curacao, Netherlands	164100.0	Netherlands	554	Curacao	Netherlands		17947
+534	SX	SXM	534.0			18.0425	-63.0548	Sint Maarten, Netherlands	42882.0	Netherlands	555	Sint Maarten	Netherlands		18078
+535	BQ	BES	535.0			12.1784	-68.2385	Bonaire, Sint Eustatius and Saba, Netherlands	26221.0	Netherlands	556	Bonaire, Sint Eustatius and Saba	Netherlands		17816
 554	NZ	NZL	554.0			-40.9006	174.886	New Zealand	4822233.0	New Zealand	319		New Zealand		18209
 558	NI	NIC	558.0			12.865416	-85.207229	Nicaragua	6624554.0	Nicaragua	320		Nicaragua		18340
 562	NE	NER	562.0			17.607789	8.081666	Niger	24206636.0	Niger	321		Niger		18471
@@ -188,18 +188,18 @@
 792	TR	TUR	792.0			38.9637	35.2433	Turkey	84339067.0	Turkey	499		Turkey		24759
 800	UG	UGA	800.0			1.373333	32.290275	Uganda	45741000.0	Uganda	500		Uganda		25021
 804	UA	UKR	804.0			48.3794	31.1656	Ukraine	43733759.0	Ukraine	501		Ukraine		25152
-784	AE	ARE	784.0			23.424076	53.847818000000004	United Arab Emirates	9890400.0	United Arab Emirates	504		United Arab Emirates		25283
-826	GB	GBR	826.0			55.3781	-3.4360000000000004	United Kingdom	67886004.0	United Kingdom	505		United Kingdom		25414
-858	UY	URY	858.0			-32.5228	-55.7658	Uruguay	3473727.0	Uruguay	506		Uruguay		25545
-860	UZ	UZB	860.0			41.377491	64.585262	Uzbekistan	33469199.0	Uzbekistan	507		Uzbekistan		25676
-862	VE	VEN	862.0			6.4238	-66.5897	Venezuela	28435943.0	Venezuela	508		Venezuela		25807
-704	VN	VNM	704.0			14.058323999999999	108.277199	Vietnam	97338583.0	Vietnam	509		Vietnam		25938
-275	PS	PSE	275.0			31.9522	35.2332	West Bank and Gaza	5101416.0	West Bank and Gaza	510		West Bank and Gaza		26069
-732	EH	ESH	732.0			24.2155	-12.8858	Western Sahara	597330.0	Western Sahara	511		Western Sahara		26200
-887	YE	YEM	887.0			15.552726999999999	48.516388	Yemen	29825968.0	Yemen	512		Yemen		26331
-894	ZM	ZMB	894.0			-13.133897	27.849332	Zambia	18383956.0	Zambia	513		Zambia		26462
-716	ZW	ZWE	716.0			-19.015438	29.154857	Zimbabwe	14862927.0	Zimbabwe	514		Zimbabwe		26593
-36	AU	AUS	36.0			-25.0	133.0	Australia	25459700.0	Australia	541		Australia		1048
-124	CA	CAN	124.0			60.0	-95.0	Canada	37855702.0	Canada	550		Canada		4192
-156	CN	CHN	156.0			30.5928	114.3055	China	1404676330.0	China	566		China		4716
-840	US	USA	840.0			40.0	-100.0	US	329466283.0	US	600		United States of America		24890
+784	AE	ARE	784.0			23.424076	53.847818000000004	United Arab Emirates	9890400.0	United Arab Emirates	530		United Arab Emirates		25283
+826	GB	GBR	826.0			55.3781	-3.4360000000000004	United Kingdom	67886004.0	United Kingdom	531		United Kingdom		25414
+858	UY	URY	858.0			-32.5228	-55.7658	Uruguay	3473727.0	Uruguay	532		Uruguay		25545
+860	UZ	UZB	860.0			41.377491	64.585262	Uzbekistan	33469199.0	Uzbekistan	533		Uzbekistan		25676
+862	VE	VEN	862.0			6.4238	-66.5897	Venezuela	28435943.0	Venezuela	534		Venezuela		25807
+704	VN	VNM	704.0			14.058323999999999	108.277199	Vietnam	97338583.0	Vietnam	535		Vietnam		25938
+275	PS	PSE	275.0			31.9522	35.2332	West Bank and Gaza	5101416.0	West Bank and Gaza	536		West Bank and Gaza		26069
+732	EH	ESH	732.0			24.2155	-12.8858	Western Sahara	597330.0	Western Sahara	537		Western Sahara		26200
+887	YE	YEM	887.0			15.552726999999999	48.516388	Yemen	29825968.0	Yemen	538		Yemen		26331
+894	ZM	ZMB	894.0			-13.133897	27.849332	Zambia	18383956.0	Zambia	539		Zambia		26462
+716	ZW	ZWE	716.0			-19.015438	29.154857	Zimbabwe	14862927.0	Zimbabwe	540		Zimbabwe		26593
+36	AU	AUS	36.0			-25.0	133.0	Australia	25459700.0	Australia	567		Australia		1048
+124	CA	CAN	124.0			60.0	-95.0	Canada	37855702.0	Canada	576		Canada		4192
+156	CN	CHN	156.0			30.5928	114.3055	China	1404676330.0	China	592		China		4716
+840	US	USA	840.0			40.0	-100.0	US	329466283.0	US	626		United States of America		24890
