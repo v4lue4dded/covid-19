@@ -7,7 +7,7 @@ git status
 git pull
 sudo git submodule foreach --recursive 'git pull'
 git status
-/home/ubuntu/anaconda3/bin/python merge_tables.py
+sudo /home/ubuntu/anaconda3/bin/python merge_tables.py
 git status
 git add date.txt
 git add COVID-19
