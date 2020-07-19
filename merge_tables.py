@@ -167,7 +167,7 @@ df_data_clean = df_co_clean.merge(
     ).assign(
           lag_21_confirmed    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'].shift(21).fillna(0)
     ).assign(
-          probably_recovered  = lambda x: np.maximum(x['lag_21_confirmed'] - x['recovered'] - x['deaths'], 0)
+          probably_recovered  = lambda x: np.maximum(np.minimum(x['lag_21_confirmed'],x['confirmed']) - x['recovered'] - x['deaths'], 0)
     ).assign(
           active              = lambda x: (x.confirmed - x.deaths - x.recovered - x.probably_recovered).fillna(0)
     ).assign(
