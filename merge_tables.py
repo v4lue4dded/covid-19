@@ -164,9 +164,12 @@ df_data_clean = df_co_clean.merge(
         , recovered           = lambda x: x['recovered'].fillna(0)
         , deaths              = lambda x: x['deaths'   ].fillna(0)
         , tested              = lambda x: x['tested'   ].fillna(0)
-        , lag_21_confirmed    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'].shift(21).fillna(0)
-        , probably_recovered  = lambda x: np.maximum(x['lag_21_confirmed'] - x['recovered'] - x['deaths'], 0)
-        , active              = lambda x: (x.confirmed - x.deaths - x.recovered - x.probably_recovered).fillna(0)
+    ).assign(
+          lag_21_confirmed    = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'].shift(21).fillna(0)
+    ).assign(
+          probably_recovered  = lambda x: np.maximum(x['lag_21_confirmed'] - x['recovered'] - x['deaths'], 0)
+    ).assign(
+          active              = lambda x: (x.confirmed - x.deaths - x.recovered - x.probably_recovered).fillna(0)
     ).assign(
         lag_1_confirmed              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['confirmed'             ].shift(1).fillna(0)
     ,   lag_1_recovered              = lambda x: x.sort_values(by=['date'], ascending=True).groupby(['lu_id'])['recovered'             ].shift(1).fillna(0)
