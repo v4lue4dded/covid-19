@@ -5,7 +5,7 @@ cd ~/repos/covid-19
 
 git status
 git pull
-sudo git submodule foreach --recursive 'git pull'
+sudo git submodule update --remote
 git status
 sudo /home/ubuntu/anaconda3/bin/python merge_tables.py
 git status
@@ -20,3 +20,4 @@ git commit -m "date update: `date +'%Y-%m-%d %H:%M:%S'`";
 git status
 git push origin master
 git status
+git lfs prune
