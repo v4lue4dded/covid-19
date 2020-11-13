@@ -1,13 +1,14 @@
 #!/bin/bash
 
 printf "\n\n\nstart of run at `date +'%Y-%m-%d %H:%M:%S'`\n"
-cd ~/repos/covid-19
+cd ~/../../data/repos/covid-19/
+
 
 git status
 git pull
-sudo git submodule update --remote
+git submodule update --remote
 git status
-sudo /home/ubuntu/anaconda3/bin/python merge_tables.py
+python merge_tables.py
 git status
 git add date.txt
 git add COVID-19
