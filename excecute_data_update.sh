@@ -8,7 +8,7 @@ git status
 git pull
 git submodule update --remote
 git status
-python merge_tables.py
+/data/tools/anaconda3/bin/python merge_tables.py
 git status
 git add date.txt
 git add COVID-19
