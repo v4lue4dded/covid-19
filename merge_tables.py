@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import sys as sys
 sys.path[0]=''
 import numpy as np
